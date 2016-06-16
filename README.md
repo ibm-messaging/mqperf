@@ -8,7 +8,7 @@ For new documents and performance articles, we intend to use this repository as 
 
 ### MQ Appliance
 
-We intend to publish the MQ Appliance performance documents
+The M2001 MQ Appliance was released last week, and the accompanying MQ Appliance Performance Report (MPA1) has been updated to show the increased performance on the new Hardware. [MPA1-2.0.pdf](./MPA1-2.0.pdf)
 
 ### MQ Distributed
 
