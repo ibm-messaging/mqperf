@@ -8,11 +8,13 @@ For new documents and performance articles, we intend to use this repository as 
 
 ### MQ Appliance
 
-The M2001 MQ Appliance was released last week, and the accompanying MQ Appliance Performance Report (MPA1) has been updated to show the increased performance on the new Hardware. [MPA1-2.0.pdf](./MPA1-2.0.pdf)
+The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Appliance Performance Report (MPA1) has been updated to show the increased performance on the new Hardware. [MPA1-2.0.pdf](./MPA1-2.0.pdf)
+
+The MQ Appliance HA and DR Performance Report (MPA2) will be updated shortly and will be made available here in due course, meanwhile the MPA2 report for M2000 is available for download. [MPA2.pdf](./MPA2.pdf)
 
 ### MQ Distributed
 
-We intend to publish the MQ base performance documents
+We intend to publish future versions of the MQ base performance documents.
 
 ### Get in touch
 You can contact @stmassey and Paul Harris with questions about the MQ Performance content.
