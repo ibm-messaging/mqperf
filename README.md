@@ -15,8 +15,8 @@ The MQ Appliance HA and DR Performance Report (MPA2) will be updated shortly and
 ### MQ Appliance - M2000
 
 The M2000 MQ Appliance was the original version of the MQ Appliance and the performance reports that relate to this model are available here
-|M2000 Performance Report|[MPA1.pdf](./MPA1.pdf)|
-|M2000 HA and DR Performance Report|[MPA2.pdf](./MPA2.pdf)|
+| M2000 Performance Report | [MPA1.pdf](./MPA1.pdf) |
+| M2000 HA and DR Performance Report | [MPA2.pdf](./MPA2.pdf) |
 
 ### MQ Distributed
 
