@@ -27,6 +27,11 @@ We intend to publish future versions of the MQ base performance documents.
 
 MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS and non AMS scenarios. [AMS.pdf](./AMS.pdf)
 
+### MQ for z/OS
+
+Performance reports for the latest version of IBM MQ for z/OS will initially be published both here and on the [IBM SupportPac](http://www-01.ibm.com/support/docview.wss?uid=swg27007150) website. 
+- MQ for z/OS version 9.0 performance report [MP1K.pdf](./mp1k.pdf). The report discusses the performance of AMS, including the new AMS 'Confidentiality' Quality of Protection, using IBM MQ classes for JMS in both CICS OSGi JVM Server and IMS environments as well as page set statistics.
+
 ### Get in touch
 You can contact @stmassey and Paul Harris with questions about the MQ Performance content.
 
