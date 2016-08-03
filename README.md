@@ -35,5 +35,5 @@ Performance reports for the latest version of IBM MQ for z/OS will initially be 
 
 
 ### Get in touch
-You can contact @stmassey and Paul Harris with questions about the MQ Performance content.
+You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
 
