@@ -32,6 +32,7 @@ MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A 
 Performance reports for the latest version of IBM MQ for z/OS will initially be published both here and on the [IBM SupportPac](http://www-01.ibm.com/support/docview.wss?uid=swg27007150) website. 
 - MQ for z/OS Capacity Planning and Tuning guide [MP16.pdf](./mp16.pdf). This report provides capacity planning and setup/tuning information for IBM MQ for z/OS version 9.0 and earlier releases. It describes how to define performance critical queue manager and channel initiator environment parameters. This version of the report includes LOGLOAD considerations, queue manager restart, CFCC level 21 and the updated IMS Preload module list.
 - MQ for z/OS version 9.0 performance report [MP1K.pdf](./mp1k.pdf). The report discusses the performance of AMS, including the new AMS 'Confidentiality' Quality of Protection, using IBM MQ classes for JMS in both CICS OSGi JVM Server and IMS environments as well as page set statistics.
+- MQ for z/OS version 9.0.1 performance report [V901.pdf](./V901.pdf). The report discusses the performance improvements to AMS as part of the first Continuous Delivery release.
 
 
 ### Get in touch
