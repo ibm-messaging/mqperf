@@ -19,6 +19,11 @@ The M2000 MQ Appliance was the original version of the MQ Appliance and the perf
 - M2000 Performance Report [MPA1.pdf](./MPA1.pdf) 
 - M2000 HA and DR Performance Report [MPA2.pdf](./MPA2.pdf) 
 
+#### AMS
+
+MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS, TLS and non AMS scenarios. [AMSMQAppliance.pdf](./AMSMQAppliance.pdf)
+
+
 ### MQ Distributed
 
 We intend to publish future versions of the MQ base performance documents.
@@ -26,6 +31,7 @@ We intend to publish future versions of the MQ base performance documents.
 #### AMS
 
 MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS and non AMS scenarios. [AMS.pdf](./AMS.pdf)
+
 
 ### MQ for z/OS
 
