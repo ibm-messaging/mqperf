@@ -1,0 +1,175 @@
+[global]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of xK
+
+; Device to write to; Note all data on that partition/disk will be destroyed
+directory=/disk/
+;filename=fio-file
+
+; Use non-buffered I/O (O_DIRECT)
+direct=1
+
+; Number of IOs to perform before issuing fsync
+;fsync=1
+
+; Could enable fdatasync=1 to only sync the data parts of the file (replicate MQ)
+; Initial tests used fsync so leaving for now
+ fdatasync=1
+
+; Use synchronous I/O (O_SYNC)
+sync=1
+
+; Lock files before writing
+lockfile=exclusive
+
+overwrite=1
+
+; sync means use read/write
+; psync means use pread/pwrite
+; vsync readv/writev
+; libaio use asynchronous I/o
+; posixaio
+; mmap
+; syslet-rw
+; sg
+; null
+ioengine=sync
+
+; I/O pattern
+;  read sequential reads
+;  write sequence writes
+;  randread random reads
+;  randwrite random writes
+;  rw mixed sequential reads and writes
+;  randrw mixes random reads and writes
+rw=write
+
+; Test is time based on runtime seconds
+time_based=1
+
+; Runtime in seconds
+runtime=180
+
+; Number of threads
+numjobs=1
+
+; Number of I/O units to keep in flight against the file; doesnt apply to sync io engines
+iodepth=1
+
+; Report total instead of per-job
+group_reporting
+
+; Number of files; Only half seem to be used for writing
+nrfiles=20 
+
+; Number of simultaneousuly open files
+openfiles=1
+
+; File size
+filesize=256MB
+
+; Fill device until 'No space left on device' is encountered. This will not occur on raw devices
+fill_device=1
+
+; Run verify phase after write phase. Only valid if verify option provided
+do_verify=0
+
+
+; ************
+; JOBS SECTION
+; ************
+[write-4K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 4K
+
+; Wait for preceeding jobs in the job file ot exit before starting this
+; one.
+stonewall
+
+; Block size
+bs=4K
+
+
+[write-8K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 4K
+
+; Wait for preceeding jobs in the job file ot exit before starting this
+; one.
+stonewall
+
+; Block size
+bs=8K
+
+
+[write-16K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 16K
+
+; Wait for preceeding jobs in the job file ot exit before starting this
+; one.
+stonewall
+
+; Block size
+bs=16K
+
+
+[write-32K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 16K
+
+; Wait for preceeding jobs in the job file ot exit before starting this
+; one.
+stonewall
+
+; Block size
+bs=32K
+
+
+[write-64K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 64K
+
+; Wait for preceeding jobs in the job file ot exit before sstarting this
+; one.
+stonewall
+
+; Block size
+bs=64K
+
+
+[write-128K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 64K
+
+; Wait for preceeding jobs in the job file ot exit before sstarting this
+; one.
+stonewall
+
+; Block size
+bs=128K
+
+
+[write-256K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 64K
+
+; Wait for preceeding jobs in the job file ot exit before sstarting this
+; one.
+stonewall
+
+; Block size
+bs=256K
+
+
+[write-1024K]
+; Description
+description=FIO Write test to simulate MQ logging activity using blocksize of 1MB
+
+; Wait for preceeding jobs in the job file ot exit before sstarting this
+; one.
+stonewall
+
+; Block size
+bs=1024K
+
