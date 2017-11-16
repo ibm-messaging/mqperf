@@ -32,6 +32,11 @@ We intend to publish future versions of the MQ base performance documents.
 
 MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS and non AMS scenarios. [AMS.pdf](./AMS.pdf)
 
+#### Persistent Messaging Performance
+
+A paper describing the best practises for persistent messaging, and illustrating the performance of some different filesytems hosting the MQ transaction log of Linux on x86 has now been released:
+[mqio_v1.pdf](./mqio_v1.pdf).
+
 
 ### MQ for z/OS
 
