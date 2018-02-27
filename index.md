@@ -2,7 +2,7 @@
 
 This github repository will be used to publish MQ Performance documents from the MQ Performance Team based in Hursley, England.
 
-For many years the traditional place for distributed Performance reports has been the [IBM SupportPac](http://www-01.ibm.com/support/docview.wss?uid=swg27007150) website. 
+For many years the traditional place for Performance reports has been the [IBM SupportPac](http://www-01.ibm.com/support/docview.wss?uid=swg27007150) website. 
 
 For new documents and performance articles, we intend to use this repository as the home for MQ Performance collateral.
 
@@ -39,7 +39,7 @@ A paper describing the best practises for persistent messaging, and illustrating
 
 ### MQ for z/OS
 
-Performance reports for the latest version of IBM MQ for z/OS will initially be published both here and on the [IBM SupportPac](http://www-01.ibm.com/support/docview.wss?uid=swg27007150) website. 
+Performance reports for the latest versions of IBM MQ for z/OS are available here. 
 - MQ for z/OS Capacity Planning and Tuning guide [MP16.pdf](./mp16.pdf). This report provides capacity planning and setup/tuning information for IBM MQ for z/OS version 9.0 and earlier releases. It describes how to define performance critical queue manager and channel initiator environment parameters. This version of the report includes z14 and CryptoExpress6S benefits, CFCC level 22, using a common value in MSGID/CORRELID on shared queues, the impact of attempting to open queues that are not defined, the effect of first-open and last-close on shared queue plus links to performance blogs.
 - MQ for z/OS version 9.0 performance report [MP1K.pdf](./mp1k.pdf). The report discusses the performance of AMS, including the new AMS 'Confidentiality' Quality of Protection, using IBM MQ classes for JMS in both CICS OSGi JVM Server and IMS environments as well as page set statistics.
 - MQ for z/OS version 9.0.1 performance report [V901.pdf](./V901.pdf). The report discusses the performance improvements to AMS as part of the first Continuous Delivery release.
