@@ -1,3 +1,5 @@
+### NOTE - The links below will not work. View the website generated from this page here: http://ibm-messaging.github.io/mqperf/
+
 ### MQ Performance documents
 
 This github repository will be used to publish MQ Performance documents from the MQ Performance Team based in Hursley, England.
