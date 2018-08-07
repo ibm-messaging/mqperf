@@ -37,6 +37,11 @@ MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A 
 A paper describing the best practises for persistent messaging, and illustrating the performance of some different filesytems hosting the MQ transaction log of Linux on x86 has now been released:
 [mqio_v1.pdf](./mqio_v1.pdf).
 
+#### RDQM HA Performance
+
+A report illustrating the performance of the high availability (HA) function using RDQM (delivered in the V9.0.2 CD & V9.1 LTs releases of MQ) has been released. The report is based on tests run on Linux for x86, and includes comparisons with the previous software HA offering (MIQM).
+[rdqm_performance_1.0.pdf](./rdqm_performance_1.0.pdf).
+
 ### MQ for z/OS
 
 Performance reports for the latest versions of IBM MQ for z/OS are available here. 
