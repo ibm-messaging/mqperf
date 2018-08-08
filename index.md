@@ -40,7 +40,7 @@ A paper describing the best practises for persistent messaging, and illustrating
 #### RDQM HA Performance
 
 A report illustrating the performance of the high availability (HA) function using RDQM (delivered in the V9.0.4 CD & V9.1 LTs releases of MQ) has been released. The report is based on tests run on Linux for x86, and includes comparisons with the previous software HA offering (MIQM).
-[rdqm_performance_1.0.pdf](./rdqm_performance_1.0.pdf).
+[rdqm_performance_1.1.pdf](./rdqm_performance_1.1.pdf).
 
 ### MQ for z/OS
 
