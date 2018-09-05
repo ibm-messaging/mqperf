@@ -53,7 +53,7 @@ Performance reports for the latest versions of IBM MQ for z/OS are available her
 
 Performance reports for MQ on z/OS documenting our experiences:
 
-- How does MQ for z/OS perform when moving to z14? Paper [MQ for z/OS on z14](./MQ_for_zOS_on_z14.pdf) discusses the performance expectations and what we achieved when moving from z13 to z14. The paper also discusses some of the new features available on z14 that MQ is able to use such as the Crypto Express 6S feature and the re-location of Storage Class Memory from CF Flash to Virtual Flash Memory.
+- How does MQ for z/OS perform when moving to z14? Paper [MQ for z/OS on z14](./MQ_for_zOS_on_z14_v1.2.pdf) discusses the performance expectations and what we achieved when moving from z13 to z14. The paper also discusses some of the new features available on z14 that MQ is able to use such as the Crypto Express 6S feature and the re-location of Storage Class Memory from CF Flash to Virtual Flash Memory. There is also an update to the impact of using zEDC compression with MQ archive logs.
 - Performance of streamed persistent workload from z/OS using shared queue to Linux [QREP_Performance_MQ_zOS_to_Linux.pdf](./QREP_Performance_MQ_zOS_to_Linux.pdf). This paper discusses the shared queue configuration options when sending persistent messages to a Linux partner, illustrating differences in performance when the Linux partner uses client or bindings connections. The configuration used simulates a Queue Replication workload.
 
 
