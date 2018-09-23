@@ -65,6 +65,9 @@ Performance reports for MQ on z/OS documenting our experiences:
 IBM MQ Managed file transfer performance report contains the charts showing Performance measurements to present the performance characteristics of MQ V9.0.5 for Linux platform and to assist capacity planning. This report shows the messaging rate that can be achieved on Linux systems when transferring messages using different chunk sizes. Anyone designing, implementing or sizing Managed File Transfer solutions using WebSphere MQ for V9.0.5 and above and needs to understand the performance characteristics on Linux platform should review this report.
 - xLinux MFT 9.0.5 Performance Report [Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf](./Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf)
 - Windows MFT 9.0.5 Performance Report [Windows-IBM-MQMFT-9.0.5-PerformanceReport.pdf](./Windows-IBM-MQMFT-9.0.5-PerformanceReport.pdf)
+- MFT 9.0.5 Performance Report on the number of Standard MFT Agents per Agent Queue Manager [IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf](./IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf)
+- MFT 9.1 Performance Report on transfers of Huge file size like 10, 20 or 30 GB [BM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf](./IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf)
+- MFT 9.0.5 Performance Report of Protocol bridge adapater Agent and Standard Agent when files are transferred across 20+ miles locally and 5000+ miles globally [IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf](./IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf)
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
