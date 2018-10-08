@@ -7,9 +7,14 @@ For many years the traditional place for Performance reports has been the [IBM S
 For new documents and performance articles, we intend to use this repository as the home for MQ Performance collateral.
 
 ### MQ Appliance
+#### M2002
+
+The M2002 MQ Appliance was released in July 2018, and the accompanying MQ Appliance Performance Report (MPA3) illustrates the increased performance of the new Hardware:
+- M2002 Performance Report [MPA3.pdf](./MPA3.pdf)
+
 #### M2001
 
-The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Appliance Performance Report (MPA1) MQ Appliance HA and DR Performance Report (MPA2) have been updated to show the increased performance on the new Hardware:
+The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Appliance Performance Report (MPA1) and MQ Appliance HA and DR Performance Report (MPA2) have been updated to show the increased performance on the new Hardware:
 - M2001 Performance Report [MPA1-2.0.pdf](./MPA1-2.0.pdf)
 - ~~M2001 HA and DR Performance Report [MPA2-2.0.pdf](./MPA2-2.0.pdf)~~
 
