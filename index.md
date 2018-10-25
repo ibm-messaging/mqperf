@@ -76,7 +76,7 @@ IBM MQ Managed file transfer performance report contains the charts showing Perf
 - xLinux MFT 9.0.5 Performance Report [Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf](./Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf)
 - Windows MFT 9.0.5 Performance Report [Windows-IBM-MQMFT-9.0.5-PerformanceReport.pdf](./Windows-IBM-MQMFT-9.0.5-PerformanceReport.pdf)
 - MFT 9.0.5 Performance Report on the number of Standard MFT Agents per Agent Queue Manager [IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf](./IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf)
-- MFT 9.1 Performance Report on transfers of Huge file size like 10, 20 or 30 GB [BM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf](./IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf)
+- MFT 9.1 Performance Report on transfers of Huge file size like 10, 20 or 30 GB [IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf](./IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf)
 - MFT 9.0.5 Performance Report of Protocol bridge Agent and Standard Agent when files are transferred across 20+ miles locally and 5000+ miles globally [IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf](./IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf)
 
 ### Get in touch
