@@ -35,6 +35,10 @@ MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A 
 
 
 ### MQ Distributed
+
+#### Best Practises for Performance
+This document contains general sections on best practises for performance, formerly included in the performance reports (MQ V8 and earlier). It is now published as a seperate report.[MQ Performance Best Practises V1.0](./MQ_Performance_Best_Practices_v1.0.pdf)
+
 #### Base MQ (V9.1 onwards)
 Performance reports for MQ on distributed platforms from V9.1 onwards are available below.
 For reports on versions of distributed MQ prior to V9.1 go to the MQ SupportPac page here [here](http://www-01.ibm.com/support/docview.wss?uid=swg27007150). 
