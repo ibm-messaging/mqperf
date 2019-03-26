@@ -6,7 +6,7 @@ For many years the traditional place for Performance reports has been the [IBM S
 
 For new documents and performance articles, we intend to use this repository as the home for MQ Performance collateral.
 
-### MQ Appliance <div id="MqAppliance"/>
+### MQ Appliance [](#mqapplicance)
 #### M2002
 
 The M2002 MQ Appliance was released in July 2018, and the accompanying MQ Appliance Performance Report (MPA3) illustrates the increased performance of the new Hardware:
@@ -34,7 +34,7 @@ The M2000 MQ Appliance was the original version of the MQ Appliance and the perf
 MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS, TLS and non AMS scenarios. [AMSMQAppliance.pdf](./AMSMQAppliance.pdf)
 
 
-### MQ Distributed <div id="MqDistributed"/>
+### MQ Distributed [](#mqdistributed)
 
 #### Best Practises for Performance
 This document contains general sections on best practises for performance, formerly included in the performance reports (MQ V8 and earlier). It is now published as a seperate report.[MQ Performance Best Practises V1.0](./MQ_Performance_Best_Practices_v1.0.pdf)
@@ -64,7 +64,7 @@ A report illustrating the performance of the high availability (HA) function usi
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
 
-### MQ for z/OS <div id="MqZos"/>
+### MQ for z/OS [](#mqzos)
 
 Performance reports for the latest versions of IBM MQ for z/OS are available here. 
 - MQ for z/OS Capacity Planning and Tuning guide [MP16.pdf](./mp16.pdf). This report provides capacity planning and setup/tuning information for IBM MQ for z/OS version 9.1 and earlier releases. It describes how to define performance critical queue manager and channel initiator environment parameters. This version of the report includes considerations for backing up and recovery of CF structures, SMDS tuning, getting messages using GroupID and using message selectors.
@@ -80,7 +80,7 @@ Performance reports for MQ on z/OS documenting our experiences:
 - Performance of streamed persistent workload from z/OS using shared queue to Linux [QREP_Performance_MQ_zOS_to_Linux.pdf](./QREP_Performance_MQ_zOS_to_Linux.pdf). This paper discusses the shared queue configuration options when sending persistent messages to a Linux partner, illustrating differences in performance when the Linux partner uses client or bindings connections. The configuration used simulates a Queue Replication workload.
 
 
-### MFT <div id="MqMFT"/>
+### MFT [](#mft)
 
 IBM MQ Managed file transfer performance report contains the charts showing Performance measurements to present the performance characteristics of MQ V9.0.5 for Linux platform and to assist capacity planning. This report shows the messaging rate that can be achieved on Linux systems when transferring messages using different chunk sizes. Anyone designing, implementing or sizing Managed File Transfer solutions using WebSphere MQ for V9.0.5 and above and needs to understand the performance characteristics on Linux platform should review this report.
 - xLinux MFT 9.0.5 Performance Report [Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf](./Linux-IBM-MQMFT-9.0.5.0-PerformanceReport.pdf)
