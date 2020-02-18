@@ -2,7 +2,7 @@
 
 We use a number of different test harnesses and tools in our testing of MQ. Many of which have been made publicly available via open-source.
 
-There are two different messaging test applications
+There are two different messaging test applications:
 *  [CPH](https://github.com/ibm-messaging/mq-cph)            
 C Based Test Harness utilising the MQI API
 *  [JMSTestHarness](https://github.com/ot4i/perf-harness)    
@@ -19,7 +19,7 @@ These repositories contain Dockerfiles and instructions to help you create the r
 There is also a tool for testing your IO performance (in the manner in which MQ writes) called [MQLDT](https://github.com/ibm-messaging/mqldt) (MQ Log Disk Tester).
 
 This also now has a containerized version available here [mqldt-c](https://github.com/ibm-messaging/mqldt-c) and the automatically built
-image is available from docker hub https://hub.docker.com/repository/docker/stmassey/mqldt. This image can be easily obtained by:
+image is available from docker hub at https://hub.docker.com/repository/docker/stmassey/mqldt. This image can be easily obtained by:
 ```
 docker pull stmassey/mqldt
 ```
