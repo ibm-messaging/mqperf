@@ -91,6 +91,11 @@ IBM MQ Managed file transfer performance report contains the charts showing Perf
 - MFT 9.1 Performance Report on transfers of Huge file size like 10, 20 or 30 GB [IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf](./IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf)
 - MFT 9.0.5 Performance Report of Protocol bridge Agent and Standard Agent when files are transferred across 20+ miles locally and 5000+ miles globally [IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf](./IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf)
 
+### IBM MQ XMS .NET Client
+IBM XMS .NET Client performance report showing Performance measurements of MQ v9.1.x XMS .NET Client's connecting to MQ v9.1 Queue Manager.Performance reports contains .NET Core applications running on Windows and Linux.Where .NET Framework applications are running on Windows machine.
+- XMS .NET Core Performance Report [XMS .NET Core Performance Report.pdf](./XMS .NET Core Performance Report.pdf)
+- XMS .NET Framework Performance Report [XMS .NET Framework Performance Report](./XMS .NET Framework Performance Report.pdf)
+
 ### FASP
 The Fast, Adaptive and Secure Protocol (FASP®) is a high-speed transport that can achieve speeds much higher than TCP, especially across high latency and/or lossy networks. This capability is available through the fasp.io Gateway which MQ V9.1.4 advanced edition customers can download via Passport Advantage. Some initial results measured in the lab for servers channels connecting through a fasp.io Gateway can be seen in [this deck](./MQ914_fasp_gw.pdf). 
 **!!18th Feb 2020 - Updated with compression measurements.**
