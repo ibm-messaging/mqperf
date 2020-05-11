@@ -43,7 +43,7 @@ This document contains general sections on best practises for performance, forme
 Performance reports for MQ on distributed platforms from V9.1 onwards are available below.
 For reports on versions of distributed MQ prior to V9.1 go to the MQ SupportPac page here [here](http://www-01.ibm.com/support/docview.wss?uid=swg27007150). 
 
-- IBM MQ V9.1 for Linux (x86-64 platform) Performance Report: [MQ_for_xLinux_V910_Performance.pdf](./MQ_for_xLinux_V910_Performance.pdf)
+- IBM MQ V9.1 for Linux (x86-64 platform) Performance Report: [MQ_for_xLinux_V910_Performance.pdf](./MQ_V9.1_Performance_Report_xLinux.pdf)
 - IBM MQ V9.1 for Windows Performance Report: [MQ_for_Windows_V910_Performance.pdf](./MQ_for_Windows_V910_Performance.pdf)
 
 #### AMS
