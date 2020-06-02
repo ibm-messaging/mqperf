@@ -64,6 +64,9 @@ A report illustrating the performance of the high availability (HA) function usi
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
 
+### MQ on OpenShift
+MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
+
 ### MQ for z/OS
 
 Performance reports for the latest versions of IBM MQ for z/OS are available here. 
