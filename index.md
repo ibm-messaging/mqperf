@@ -67,6 +67,11 @@ A paper illustrating some of the important factors that can affect queue manager
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
 
+Advice on setup and configuration of MQ (CP4I) and running workloads against the deployed QM can be found [here](./openshift/configuration.md)
+
+#### OpenShift 4.2 + CP4I 2019.4.1 (MQ 9.1.4)
+The first performance whitepaper on OpenShift will look at the performance of the QM when the client is co-located in the same OpenShift cluster. 
+
 ### MQ for z/OS
 
 Performance reports for the latest versions of IBM MQ for z/OS are available here. 
