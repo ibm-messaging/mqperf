@@ -13,7 +13,7 @@ The integration (CP4I) MQ image has then been rebuilt to use the rebuilt MQ imag
 These steps should not be required when the capability to configure these parameters is enabled in the MQ deployment mechanism.
 
 ### MQ client deployment
-Details of building and deploying the CPH client on OCP are provided in the cphtestp repository [instructions](https://github.com/ibm-messaging/cphtestp/blob/master/openshift.md)
+Details of building and deploying the CPH client on OCP are provided in the cphtestp repository [instructions](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/openshift.md)
 
 ### Additional network configuration
 The default SDN (Software Defined Network) for our OCP 4.2 cluster uses 1Gb networking for all its communication between master->workers as well as workers->workers and external clients->workers. This obviously creates a network bottleneck when testing high throughput messaging. We have a 10GbE network  available across our cluster and clients, so we need to take advantage of this. This can be achieved using the Multus CNI plugin.
