@@ -10,6 +10,8 @@ The [repository](https://github.com/ibm-messaging/mq-container) that controls th
 
 The integration (CP4I) MQ image has then been rebuilt to use the rebuilt MQ image above.
 
+The initial set of tests will be conducted with both the MQ client and MQ QM located in the same cluster and using a private network, and thus TLS communication is not required. Further tests will be completed with the MQ client outside of the cluster, with and without TLS enabled.
+
 These steps should not be required when the capability to configure these parameters is enabled in the MQ deployment mechanism.
 
 ### MQ client deployment
