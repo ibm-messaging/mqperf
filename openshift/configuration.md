@@ -74,7 +74,7 @@ spec:
  ```
 whilst this seems to work, and the configuration is applied to the node. The Pods deployed subsequently are still limited.
  
-The way to increase the pid limit is via the /etc/crio/crio.conf file deployed on each worker node. There is a mechanism where you can base64 encode the entire crio.conf file and overwrite the existing file as part of a MachineConfig, but this appears clumsy and isnt future proof as will override any subsequent changes to crio.conf. Ive raised the following [bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=1844447) on this issue. In the meantime, Ive adopted the following to enable large numbers of threads to be used by both my client application and the QM.
+The way to increase the pid limit is via the /etc/crio/crio.conf file deployed on each worker node. There is a mechanism where you can base64 encode the entire crio.conf file and overwrite the existing file as part of a [MachineConfig](https://github.com/openshift/machine-config-operator), but this appears clumsy and isnt future proof as will override any subsequent changes to crio.conf. Ive raised the following [bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=1844447) on this issue. In the meantime, Ive adopted the following to enable large numbers of threads to be used by both my client application and the QM.
 
 Select a worker node to deploy your client onto, ssh onto the worker node(you will need access to the bastion node) and manually change the pids_limit setting in crio.conf to a larger value. Whilst you are logged onto the worker node, restart the crio service 'sudo systemctl restart crio'. You will then need to modify your job/pod yaml to ensure that node is chosen.
 
