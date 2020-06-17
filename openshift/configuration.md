@@ -20,7 +20,41 @@ Details of building and deploying the CPH client on OCP are provided in the cpht
 ### Additional network configuration
 The default SDN (Software Defined Network) for our OCP 4.2 cluster uses 1Gb networking for all its communication between master->workers as well as workers->workers and external clients->workers. This obviously creates a network bottleneck when testing high throughput messaging. We have a 10GbE network  available across our cluster and clients, so we need to take advantage of this. This can be achieved using the Multus CNI plugin.
 
-At OCP 4.2.x, although the documentation suggests adding additional host networks is straightforward, it appears that further Multus interoperation will only be available in OCP 4.4.x, and that will only be at 'Tech Preview' level of support. I currently use
+At OCP 4.2.x, although the documentation suggests adding additional host networks is straightforward, it appears that further Multus interoperation will only be available in OCP 4.4.x, and that will only be at 'Tech Preview' level of support. There is some base functionality (even at 4.2), that is usable and is available by configuring the network.operator.openshift.io custom resource (CR) which stores the settings for the Cluster Network Operator (CNO).
+```
+oc edit networks.operator.openshift.io cluster
+```
+and you will need to add an entry similar to the following
+```
+  additionalNetworks:
+  - name: tengig
+    namespace: mqns
+    rawCNIConfig: '{
+      "cniVersion": "0.3.1",
+      "name": "eth1",
+      "type": "host-device",
+      "pciBusID": "0000:06:00.0",
+      "ipam": {
+        "type": "host-local",
+        "ranges": [
+          [ {
+            "subnet": "172.xx.yy.0/24",
+            "rangeStart": "172.xx.yy.64",
+            "rangeEnd": "172.xx.yy.70"
+          } ]
+        ]
+      }
+    }'
+    type: Raw
+```
+The interesting parts of the above configuration are the PCI Bus location of the additional network card that you wish to use, and then the network range from which you would like IP addresses assigned as pods are created and connected to the additional network.
+
+The statefule set yaml that controls the QM deployment will also need to refer to the additional network:
+```
+     annotations:
+        k8s.v1.cni.cncf.io/networks: mqns/tengig
+```
+and you can see how its referenced in our sample [cphtestp-job.yaml](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/cphtestp-job.yaml) that you can find in the cphtestp repository.
 
 ### Increasing the pid limit
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
