@@ -47,4 +47,4 @@ Select a worker node to deploy your client onto, ssh onto the worker node(you wi
         kubernetes.io/hostname : <worker1.hostname.com>
 ```
 
-A similar approach can be taken for editing the crio.conf on the Node the QM is running on. After restarting the crio service, delete the pod. In my testing, the same node was invariably used to recreate the QM pod.
+A similar approach can be taken for editing the crio.conf on the Node the QM is running on. After restarting the crio service, update the MQ QM stateful set yaml to use a nodeSelector to pin the QM to a particular node and delete the pod to trigger its recreation. 
