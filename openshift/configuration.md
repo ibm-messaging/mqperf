@@ -54,7 +54,7 @@ The stateful set yaml that controls the QM deployment will also need to refer to
      annotations:
         k8s.v1.cni.cncf.io/networks: mqns/tengig
 ```
-and you can see how its referenced in our sample [cphtestp-job.yaml](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/cphtestp-job.yaml) that you can find in the cphtestp repository.
+and you can see how its referenced by our MQ client application in our sample [cphtestp-job.yaml](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/cphtestp-job.yaml) that you can find in the cphtestp repository.
 
 ### Increasing the pid limit
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
