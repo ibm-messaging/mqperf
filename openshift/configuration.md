@@ -49,7 +49,7 @@ and you will need to add an entry similar to the following
 ```
 The interesting parts of the above configuration are the PCI Bus location of the additional network card that you wish to use, and then the network range from which you would like IP addresses assigned as pods are created and connected to the additional network.
 
-The statefule set yaml that controls the QM deployment will also need to refer to the additional network:
+The stateful set yaml that controls the QM deployment will also need to refer to the additional network:
 ```
      annotations:
         k8s.v1.cni.cncf.io/networks: mqns/tengig
