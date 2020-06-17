@@ -22,7 +22,7 @@ At OCP 4.2.x, although the documentation suggests adding additional host network
 
 ### Increasing the pid limit
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
-This has been reduced from the default 4096 found in docker runtime environments. It seems there isnt a straightforward approach to reconfiguring this value to support more threads. I initially tried to configure podPidsLimit in the same way as configuring maxPods, by the application of a KubletConfiguration:
+This has been reduced from the default 4096 found in docker runtime environments. Whilst this is adequate for the vast majority of scenarios, there may be cases where this proves a limitation. It seems there isnt a straightforward approach to reconfiguring this value to support more threads. I initially tried to configure podPidsLimit in the same way as configuring maxPods, by the application of a KubletConfiguration:
 ```
 apiVersion: machineconfiguration.openshift.io/v1
 kind: KubeletConfig
