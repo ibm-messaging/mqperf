@@ -60,7 +60,7 @@ and you can see how its referenced by our MQ client application in our sample [c
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
 This has been reduced from the default 4096 found in docker runtime environments. Whilst this is adequate for the vast majority of scenarios, there may be cases where this proves a limitation. 
 
-A straightfoward approach wasnt initially found, and I described a workaround [here](./pidlimit-old.md). Its now been revealed that there is a more sensible method for affecting the change to the crio configuration, and thats using a ContainerRuntimeConfig:
+A straightfoward approach wasnt initially found, and I described a workaround [here](./pidlimit-old.md). Its now been revealed that there is a more sensible method for effecting the change to the crio configuration, and thats using a ContainerRuntimeConfig:
 ```
 apiVersion: machineconfiguration.openshift.io/v1
 kind: ContainerRuntimeConfig
