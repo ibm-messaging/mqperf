@@ -12,6 +12,9 @@ For new documents and performance articles, we intend to use this repository as 
 The M2002 MQ Appliance was released in July 2018, and the accompanying MQ Appliance Performance Report (MPA3) illustrates the increased performance of the new Hardware:
 - M2002 Performance Report [MPA3.pdf](./MPA3.pdf)
 
+The M2002 MQ Appliance Performance Report (MPA4) updates MPA3 with data from MQ 9.2 and also includes data from TLS and AMS scenarios:
+- M2002 Performance Report [MPA4.pdf](./MPA4.pdf)
+
 #### M2001
 
 The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Appliance Performance Report (MPA1) and MQ Appliance HA and DR Performance Report (MPA2) have been updated to show the increased performance on the new Hardware:
