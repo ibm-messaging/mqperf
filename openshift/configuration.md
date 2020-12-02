@@ -73,10 +73,36 @@ spec:
   containerRuntimeConfig:
     pidsLimit: 4096
 ```
-Once this resource has been created, edit the mcp/worker yaml to apply the configuration, by specifying the matching label:
+Switch to the openshift-machine-config-operator project:
 ```
+oc project openshift-machine-config-operator
+oc create -f crio-config.yaml
+```
+once resource has been created, edit the mcp/worker yaml to apply the configuration, by specifying the matching label to the metadata section:
+```
+metadata:
   labels:
     config-crio: set-pid
 ```
+This will begin roll out of the updated config across the affected nodes, you can monitor this by:
+```
+oc get nodes
+[mqperf@mqperfx1 openshift]$ oc get nodes
+NAME                               STATUS                        ROLES    AGE    VERSION
+master1.es02.ocp.hursley.ibm.com   Ready                         master   320d   v1.17.1+1aa1c48
+master2.es02.ocp.hursley.ibm.com   Ready                         master   320d   v1.17.1+1aa1c48
+master3.es02.ocp.hursley.ibm.com   Ready                         master   320d   v1.17.1+1aa1c48
+worker1.es02.ocp.hursley.ibm.com   NotReady,SchedulingDisabled   worker   146d   v1.17.1+1aa1c48
+worker2.es02.ocp.hursley.ibm.com   Ready                         worker   149d   v1.17.1+1aa1c48
+worker3.es02.ocp.hursley.ibm.com   Ready                         worker   320d   v1.17.1+1aa1c48
+
+oc logs pod/machine-config-controller-85985858cd-x59hm
+I1202 15:45:46.366978       1 node_controller.go:758] Setting node worker1.es02.ocp.hursley.ibm.com to desired config rendered-worker-3b625521fd57ee60132b528dd0d2b396
+I1202 15:45:46.389985       1 node_controller.go:452] Pool worker: node worker1.es02.ocp.hursley.ibm.com changed machineconfiguration.openshift.io/desiredConfig = rendered-worker-3b625521fd57ee60132b528dd0d2b396
+I1202 15:45:47.410225       1 node_controller.go:452] Pool worker: node worker1.es02.ocp.hursley.ibm.com changed machineconfiguration.openshift.io/state = Working
+I1202 15:45:47.440930       1 node_controller.go:433] Pool worker: node worker1.es02.ocp.hursley.ibm.com is now reporting unready: node worker1.es02.ocp.hursley.ibm.com is reporting Unschedulable
+I1202 15:47:01.278742       1 node_controller.go:433] Pool worker: node worker1.es02.ocp.hursley.ibm.com is now reporting unready: node worker1.es02.ocp.hursley.ibm.com is reporting NotReady=Unknown
+```
+If you want to log onto a node to 
 
 An update to the OpenShift documentation to communicate this mechanism will made in a future release. There has been a relevant blog discussion on the subject [here](https://www.redhat.com/en/blog/red-hat-openshift-container-platform-4-now-defaults-cri-o-underlying-container-engine)
