@@ -28,7 +28,7 @@ and you will need to add an entry similar to the following
 ```
   additionalNetworks:
   - name: tengig
-    namespace: mqns
+    namespace: default
     rawCNIConfig: '{
       "cniVersion": "0.3.1",
       "name": "eth1",
@@ -52,9 +52,16 @@ The interesting parts of the above configuration are the PCI Bus location of the
 The stateful set yaml that controls the QM deployment will also need to refer to the additional network:
 ```
      annotations:
-        k8s.v1.cni.cncf.io/networks: mqns/tengig
+        k8s.v1.cni.cncf.io/networks: default/tengig
 ```
 and you can see how its referenced by our MQ client application in our sample [cphtestp-job.yaml](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/cphtestp-job.yaml) that you can find in the cphtestp repository.
+
+You can view the additional networks by:
+```
+oc get network-attachment-definitions -n default
+NAME     AGE
+tengig   49m
+```
 
 If you define your additional network within a particular namespace, it can only be accessed from within that namespace. You can use the default namespace (or global namespaces config) if you wish to share it across multiple namespaces. Different configurations (in different namespaces) applied to network interfaces on the same switch/routing can communicate with each other, but for ease of management (of resources and IP addresses), its best to stick to a single namespace.
 
