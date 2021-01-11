@@ -56,6 +56,8 @@ The stateful set yaml that controls the QM deployment will also need to refer to
 ```
 and you can see how its referenced by our MQ client application in our sample [cphtestp-job.yaml](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/cphtestp-job.yaml) that you can find in the cphtestp repository.
 
+If you define your additional network within a particular namespace, it can only be accessed from within that namespace. You can use the default namespace (or global namespaces config) if you wish to share it across multiple namespaces. Different configurations (in different namespaces) applied to network interfaces on the same switch/routing can communicate with each other, but for ease of management (of resources and IP addresses), its best to stick to a single namespace.
+
 ### Increasing the pid limit
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
 This has been reduced from the default 4096 found in docker runtime environments. Whilst this is adequate for the vast majority of scenarios, there may be cases where this proves a limitation. 
@@ -103,6 +105,5 @@ I1202 15:45:47.410225       1 node_controller.go:452] Pool worker: node worker1.
 I1202 15:45:47.440930       1 node_controller.go:433] Pool worker: node worker1.es02.ocp.hursley.ibm.com is now reporting unready: node worker1.es02.ocp.hursley.ibm.com is reporting Unschedulable
 I1202 15:47:01.278742       1 node_controller.go:433] Pool worker: node worker1.es02.ocp.hursley.ibm.com is now reporting unready: node worker1.es02.ocp.hursley.ibm.com is reporting NotReady=Unknown
 ```
-If you want to log onto a node to 
 
 An update to the OpenShift documentation to communicate this mechanism will made in a future release. There has been a relevant blog discussion on the subject [here](https://www.redhat.com/en/blog/red-hat-openshift-container-platform-4-now-defaults-cri-o-underlying-container-engine)
