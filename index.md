@@ -101,6 +101,7 @@ IBM MQ Managed file transfer performance report contains the charts showing Perf
 - MFT 9.0.5 Performance Report on the number of Standard MFT Agents per Agent Queue Manager [IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf](./IBM_MQMFT_9.0.5_Performance_Report_MultipleAgentsPerQueueManager_V2.pdf)
 - MFT 9.1 Performance Report on transfers of Huge file size like 10, 20 or 30 GB [IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf](./IBM_MQMFT_9.1_Performance_Report_HugeFilesSize_V1.pdf)
 - MFT 9.0.5 Performance Report of Protocol bridge Agent and Standard Agent when files are transferred across 20+ miles locally and 5000+ miles globally [IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf](./IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf)
+- MFT for z/OS version 9.2.0 Performance report [MFT_for_zOS_v920.pdf](./MFT_for_zOS_v920.pdf)
 
 ### IBM MQ XMS .NET Client
 IBM XMS .NET Client performance report showing Performance measurements of MQ v9.1.x XMS .NET Client's connecting to MQ v9.1 Queue Manager.Performance reports contains .NET Core applications running on Windows and Linux.Where .NET Framework applications are running on Windows machine.
