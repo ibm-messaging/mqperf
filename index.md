@@ -68,6 +68,9 @@ A report illustrating the performance of the high availability (HA) function usi
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
 
+#### Streaming Queues Performance
+Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. [MQ V9.2.3 Streaming Queues Performance Report.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report.pdf).
+
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
 
@@ -75,6 +78,7 @@ Advice on setup and configuration of MQ (CP4I) and running workloads against the
 
 #### OpenShift 4.2 + CP4I 2019.4.1 (MQ 9.1.4)
 The first performance whitepaper on OpenShift looks at the performance of the QM when the client is co-located in the same OpenShift cluster: [MQ on OCP 4.2](./openshift/OCP4.2-InternalMessaging.pdf).
+
 
 ### MQ for z/OS
 
