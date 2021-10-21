@@ -117,8 +117,8 @@ IBM XMS .NET Client performance report showing Performance measurements of MQ v9
 The Fast, Adaptive and Secure Protocol (FASP®) is a high-speed transport that can achieve speeds much higher than TCP, especially across high latency and/or lossy networks. This capability is available through the fasp.io Gateway which MQ V9.1.4 advanced edition customers can download via Passport Advantage. Some initial results measured in the lab for servers channels connecting through a fasp.io Gateway can be seen in [this deck](./MQ914_fasp_gw.pdf). 
 **!!18th Feb 2020 - Updated with compression measurements.**
 
-### Test Harnesses
-For more information on the test harnesses used to generate the data found in these reports, please take a look at the available [tools](./testharness.md).
+### Test Harnesses and tools
+For more information on the test harnesses and tools used to generate the data found in these reports, please take a look at the available [tools](./testharness.md).
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
