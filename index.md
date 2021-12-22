@@ -69,7 +69,11 @@ A paper illustrating some of the important factors that can affect queue manager
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
 
 #### Streaming Queues Performance
-Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. [MQ V9.2.3 Streaming Queues Performance Report.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report.pdf).
+
+Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. [MQ V9.2.3 Streaming Queues Performance Report V1.1.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report%20V1.1.pdf).
+```diff
+- Updated on 22nd December 2021 to include sections on using message expiry with streaming queues. -
+```
 
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
