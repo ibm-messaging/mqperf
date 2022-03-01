@@ -16,7 +16,7 @@ Whilst MPA3 contrasts the performance of M2002 with the M2001 appliance, the M20
 - M2002 Performance Report [MPA4.pdf](./MPA4.pdf)
 
 The ability to encrypt the filesystems of an M2002 appliance and thus protecting customer data at rest is supported from MQ 9.2.5. The following report details the performance impact of filesystem encryption for both the M2002A and M2002B models:
-- M2002 Filesystem Encryption Report [M2002_9.2.5_Encrypted_Filesystem_Impact](./M2002_9.2.5_Encrypted_Filesystem_Impact.pdf)
+- M2002 Filesystem Encryption Report [M2002_9.2.5_Encrypted_Filesystem_Impact.pdf](./M2002_9.2.5_Encrypted_Filesystem_Impact.pdf)
 
 #### M2001
 
