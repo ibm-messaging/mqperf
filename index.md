@@ -15,6 +15,9 @@ The M2002 MQ Appliance was released in July 2018, and the accompanying MQ Applia
 Whilst MPA3 contrasts the performance of M2002 with the M2001 appliance, the M2002 MQ Appliance Performance Report (MPA4) updates MPA3 with data from MQ 9.2 and also includes data from TLS and AMS scenarios:
 - M2002 Performance Report [MPA4.pdf](./MPA4.pdf)
 
+The ability to encrypt the filesystems of an M2002 appliance and thus protecting customer data at rest is supported from MQ 9.2.5. The following report details the performance impact of filesystem encryption for both the M2002A and M2002B models:
+- M2002 Filesystem Encryption Report [M2002_9.2.5_Encrypted_Filesystem_Impact](./M2002_9.2.5_Encrypted_Filesystem_Impact.pdf)
+
 #### M2001
 
 The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Appliance Performance Report (MPA1) and MQ Appliance HA and DR Performance Report (MPA2) have been updated to show the increased performance on the new Hardware:
