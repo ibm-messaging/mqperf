@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="MQ-Sender-Receiver-Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="duration" elementType="Argument">
+            <stringProp name="Argument.name">duration</stringProp>
+            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="warmup_duration" elementType="Argument">
+            <stringProp name="Argument.name">warmup_duration</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="sender_threads" elementType="Argument">
+            <stringProp name="Argument.name">sender_threads</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="receiver_threads" elementType="Argument">
+            <stringProp name="Argument.name">receiver_threads</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="rate" elementType="Argument">
+            <stringProp name="Argument.name">rate</stringProp>
+            <stringProp name="Argument.value">99999999999</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="sender_connections" elementType="Argument">
+            <stringProp name="Argument.name">sender_connections</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="receiver_connections" elementType="Argument">
+            <stringProp name="Argument.name">receiver_connections</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\jmeter5.5\apache-jmeter-5.5\lib\mqjars\com.ibm.mq.allclient.jar,C:\jmeter5.5\apache-jmeter-5.5\lib\mqjars\jms.jar,C:\jmeter5.5\apache-jmeter-5.5\lib\mqjars\org.json.jar</stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="MQ Connection Settings" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="qm_name" elementType="Argument">
+            <stringProp name="Argument.name">qm_name</stringProp>
+            <stringProp name="Argument.value">TEST.QM</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Queue manager Name</stringProp>
+          </elementProp>
+          <elementProp name="qm_channel" elementType="Argument">
+            <stringProp name="Argument.name">qm_channel</stringProp>
+            <stringProp name="Argument.value">SYSTEM.DEF.SVRCONN</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Server channel to connect to </stringProp>
+          </elementProp>
+          <elementProp name="qm_conn_mode" elementType="Argument">
+            <stringProp name="Argument.name">qm_conn_mode</stringProp>
+            <stringProp name="Argument.value">client</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Connection Mode (client | bindings)</stringProp>
+          </elementProp>
+          <elementProp name="qm_host" elementType="Argument">
+            <stringProp name="Argument.name">qm_host</stringProp>
+            <stringProp name="Argument.value">my_hostname_or_ip</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Queue manager host (only required for client mode)</stringProp>
+          </elementProp>
+          <elementProp name="qm_port" elementType="Argument">
+            <stringProp name="Argument.name">qm_port</stringProp>
+            <stringProp name="Argument.value">1414</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Queue manager listener port (only required for client mode)</stringProp>
+          </elementProp>
+          <elementProp name="qm_userid" elementType="Argument">
+            <stringProp name="Argument.name">qm_userid</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Userid (will attempt to connect without credentials if not specified)</stringProp>
+          </elementProp>
+          <elementProp name="qm_pwd" elementType="Argument">
+            <stringProp name="Argument.name">qm_pwd</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Password  (used if userid is set)</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Message, Destination and QoS Settings" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="q_name" elementType="Argument">
+            <stringProp name="Argument.name">q_name</stringProp>
+            <stringProp name="Argument.value">TEST.QUEUE</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Queue name (used as-is, if q_range is set to 1)</stringProp>
+          </elementProp>
+          <elementProp name="q_range" elementType="Argument">
+            <stringProp name="Argument.name">q_range</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Queue range (if &gt;2 then queues ${q_name}1 to ${qname}${q_range} are used round-robin by threads)</stringProp>
+          </elementProp>
+          <elementProp name="persistent" elementType="Argument">
+            <stringProp name="Argument.name">persistent</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Set to true for persistent messages</stringProp>
+          </elementProp>
+          <elementProp name="transacted" elementType="Argument">
+            <stringProp name="Argument.name">transacted</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Set to true for transacted sends/receives. This should be set to the same value as &apos;persistent&apos; above.</stringProp>
+          </elementProp>
+          <elementProp name="msg_len" elementType="Argument">
+            <stringProp name="Argument.name">msg_len</stringProp>
+            <stringProp name="Argument.value">2048</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Length of message to be generated (only used if msg_file is not set below)</stringProp>
+          </elementProp>
+          <elementProp name="msg_file" elementType="Argument">
+            <stringProp name="Argument.name">msg_file</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">File containing data to populate messages with (e.g. /tmp/testMsg.dat  ). Paths relative to JMeter bin directory can be used. For windows use / or \\ (i.e. c:/testfile.txt or c:\\testfile.txt)</stringProp>
+          </elementProp>
+          <elementProp name="msg_type" elementType="Argument">
+            <stringProp name="Argument.name">msg_type</stringProp>
+            <stringProp name="Argument.value">text</stringProp>
+            <stringProp name="Argument.desc">Send message as String object (text) or stream of uninterpreted bytes (binary)  (text|binary)</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="receive_timeout" elementType="Argument">
+            <stringProp name="Argument.name">receive_timeout</stringProp>
+            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Timeout for consumer.receive call (milliseconds).</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp  Thread Group (Sender Connections)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${sender_connections}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Create Sender Connections to Queue Manager" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+
+def invalidConnMode=false
+
+ // Create a connection factory
+def ff=JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def cf=ff.createConnectionFactory()
+
+// Set the properties
+cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER,&quot;${qm_name}&quot;)
+cf.setStringProperty(WMQConstants.WMQ_CHANNEL,&quot;${qm_channel}&quot;)
+
+if(&quot;${qm_conn_mode}&quot;.equals(&quot;bindings&quot;)) {
+	cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE,WMQConstants.WMQ_CM_BINDINGS)
+} else if (&quot;${qm_conn_mode}&quot;.equals(&quot;client&quot;)) {
+	cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE,WMQConstants.WMQ_CM_CLIENT)
+	cf.setStringProperty(WMQConstants.WMQ_HOST_NAME,&quot;${qm_host}&quot;)
+	cf.setIntProperty(WMQConstants.WMQ_PORT,&quot;${qm_port}&quot; as Integer)
+} else {
+	log.error(&quot;####### ERROR: Invalid connection mode specified : &quot; + &quot;${qm_conn_mode}&quot; + &quot; ########&quot;)
+	SampleResult.setSuccessful(false);
+	invalidConnMode=true
+}
+
+if(!invalidConnMode){
+	def connection
+	
+	if(&quot;${qm_userid}&quot;.equals(&quot;&quot;)) {
+		connection=cf.createConnection()
+	} else {
+		connection=cf.createConnection(&quot;${qm_userid}&quot;,&quot;${qm_pwd}&quot;)
+	}
+	connection.start()
+	log.info(&quot;####### Sender connection #&quot; + ctx.getThreadNum() +  &quot; to queue manager &quot; + &quot;${qm_name}&quot;+ &quot; established.&quot;)
+
+	//Store Connection
+	System.getProperties().put(&quot;SenderConnection&quot;+ctx.getThreadNum(),connection)
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group (Receiver Connections)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${receiver_connections}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Create Receiver Connections to Queue Manager" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+
+def invalidConnMode=false
+
+ // Create a connection factory
+def ff=JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def cf=ff.createConnectionFactory()
+
+// Set the properties
+cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER,&quot;${qm_name}&quot;)
+cf.setStringProperty(WMQConstants.WMQ_CHANNEL,&quot;${qm_channel}&quot;)
+
+if(&quot;${qm_conn_mode}&quot;.equals(&quot;bindings&quot;)) {
+	cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE,WMQConstants.WMQ_CM_BINDINGS)
+} else if (&quot;${qm_conn_mode}&quot;.equals(&quot;client&quot;)) {
+	cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE,WMQConstants.WMQ_CM_CLIENT)
+	cf.setStringProperty(WMQConstants.WMQ_HOST_NAME,&quot;${qm_host}&quot;)
+	cf.setIntProperty(WMQConstants.WMQ_PORT,&quot;${qm_port}&quot; as Integer)
+} else {
+	log.error(&quot;####### ERROR: Invalid connection mode specified : &quot; + &quot;${qm_conn_mode}&quot; + &quot; ########&quot;)
+	SampleResult.setSuccessful(false);
+	invalidConnMode=true
+}
+
+if(!invalidConnMode){
+	def connection
+	
+	if(&quot;${qm_userid}&quot;.equals(&quot;&quot;)) {
+		connection=cf.createConnection()
+	} else {
+		connection=cf.createConnection(&quot;${qm_userid}&quot;,&quot;${qm_pwd}&quot;)
+	}
+	connection.start()
+	log.info(&quot;####### Receiver connection #&quot; + ctx.getThreadNum() +  &quot; to queue manager &quot; + &quot;${qm_name}&quot;+ &quot; established.&quot;)
+
+	//Store Connection
+	System.getProperties().put(&quot;ReceiverConnection&quot;+ctx.getThreadNum(),connection)
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Senders" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${sender_threads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${duration}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Create Message, JMS Session and JMS Producer" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import javax.jms.Session
+import javax.jms.BytesMessage
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+def connRange=Integer.parseInt(&quot;${sender_connections}&quot;) 
+connName=&quot;SenderConnection&quot;+ ((ctx.getThreadNum() % connRange))
+log.debug(&quot;################Thread :&quot;+ctx.getThreadNum()+&quot; will use Connection: &quot;+connName)
+
+def connection = System.getProperties().get(connName)
+
+
+def byte[] data
+
+//Create The message data from the contents of a file (if specified) or from random bytes
+if(&quot;${msg_file}&quot;.equals(&quot;&quot;)){ //Create from random bytes - note that this will be highly uncompressable
+	def length = Integer.parseInt(&quot;${msg_len}&quot;) 
+	data = new byte[ length ];
+	while( length--!=0 ) {
+   		data[length] = (byte) (Math.random() * (122-65) + 65);
+	}
+} else { 
+	log.info(&quot;Reading data from file&quot;)
+     data = Files.readAllBytes(Paths.get(&quot;${msg_file}&quot;))
+}
+	
+
+def qName
+def qRange=Integer.parseInt(&quot;${q_range}&quot;) 
+
+if(qRange &gt; 1){
+	qName=&quot;${q_name}&quot; + ((ctx.getThreadNum() % qRange) +1)
+	log.debug(&quot;DEBUG ############ qname:&quot; + qName)
+} else {
+	qName=&quot;${q_name}&quot;
+}
+
+
+def session
+
+if(&quot;${transacted}&quot;.equals(&quot;true&quot;)){
+	session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE)
+} else {
+	session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
+}
+
+def destination = session.createQueue(qName)
+producer = session.createProducer(destination)
+
+//Create binary or text message, populated with data
+def msg
+if(&quot;${msg_type}&quot;.equals(&quot;binary&quot;)) {
+	log.debug(&quot;Creating binary message&quot;)
+	msg = session.createBytesMessage()
+	((BytesMessage)msg).writeBytes(data)
+} else {
+     log.debug(&quot;Creating text message&quot;)
+	def msg_text = new String(data, 0, data.length, &quot;UTF-8&quot;)
+	msg = session.createTextMessage(msg_text)
+}
+
+//vars is thread scope
+vars.putObject(&quot;SenderSession&quot;, session)	
+vars.putObject(&quot;Producer&quot;, producer)
+vars.putObject(&quot;Message&quot;, msg)</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <RunTime guiclass="RunTimeGui" testclass="RunTime" testname="Sender_warmup_timer" enabled="true">
+            <stringProp name="RunTime.seconds">${warmup_duration}</stringProp>
+          </RunTime>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Send Messages Warmup" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">def producer=vars.getObject(&quot;Producer&quot;)
+def session=vars.getObject(&quot;SenderSession&quot;)
+def msg=vars.getObject(&quot;Message&quot;)
+
+// Priority: 4 - default JMS 1.1 priority. 
+// Expiry: 0 - never expire
+if(&quot;${persistent}&quot;.equals(&quot;true&quot;)){
+	producer.send(msg,javax.jms.DeliveryMode.PERSISTENT,4,0)
+} else {
+	producer.send(msg,javax.jms.DeliveryMode.NON_PERSISTENT,4,0)
+}
+
+if(&quot;${transacted}&quot;.equals(&quot;true&quot;)) session.commit()
+
+SampleResult.setResponseData(msg.toString())
+SampleResult.setDataType(org.apache.jmeter.samplers.SampleResult.TEXT)</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Set Send Rate" enabled="true">
+          <intProp name="calcMode">2</intProp>
+          <stringProp name="throughput">${__jexl2(${rate}*60)}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Send Messages" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">def producer=vars.getObject(&quot;Producer&quot;)
+def session=vars.getObject(&quot;SenderSession&quot;)
+def msg=vars.getObject(&quot;Message&quot;)
+
+// Priority: 4 - default JMS 1.1 priority. 
+// Expiry: 0 - never expire
+if(&quot;${persistent}&quot;.equals(&quot;true&quot;)){
+	producer.send(msg,javax.jms.DeliveryMode.PERSISTENT,4,0)
+} else {
+	producer.send(msg,javax.jms.DeliveryMode.NON_PERSISTENT,4,0)
+}
+
+if(&quot;${transacted}&quot;.equals(&quot;true&quot;)) session.commit()
+
+SampleResult.setResponseData(msg.toString())
+SampleResult.setDataType(org.apache.jmeter.samplers.SampleResult.TEXT)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Receivers" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${receiver_threads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${duration}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Create JMS Session and JMS Consumer" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import javax.jms.Session
+
+def connRange=Integer.parseInt(&quot;${receiver_connections}&quot;) 
+connName=&quot;ReceiverConnection&quot;+ ((ctx.getThreadNum() % connRange))
+log.debug(&quot;################Thread :&quot;+ctx.getThreadNum()+&quot; will use Connection: &quot;+connName)
+
+def connection = System.getProperties().get(connName)
+
+def qName
+def qRange=Integer.parseInt(&quot;${q_range}&quot;) 
+
+if(qRange &gt; 1){
+	qName=&quot;${q_name}&quot; + ((ctx.getThreadNum() % qRange) +1)
+	log.debug(&quot;############ qname:&quot; + qName)
+} else {
+	qName=&quot;${q_name}&quot;
+}
+
+def session
+
+if(&quot;${transacted}&quot;.equals(&quot;true&quot;)){
+	session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE)
+} else {
+	session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
+}
+def destination = session.createQueue(qName)
+consumer = session.createConsumer(destination)	
+
+//vars is thread scope
+vars.putObject(&quot;ReceiverSession&quot;, session)	
+vars.putObject(&quot;Consumer&quot;, consumer)</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <RunTime guiclass="RunTimeGui" testclass="RunTime" testname="Receiver_warmup_timer" enabled="true">
+            <stringProp name="RunTime.seconds">${warmup_duration}</stringProp>
+          </RunTime>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Receive Messages Warmup" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">def consumer=vars.getObject(&quot;Consumer&quot;);
+def session=vars.getObject(&quot;ReceiverSession&quot;)
+ 
+def msg = consumer.receive(&quot;${receive_timeout}&quot; as Integer) 
+
+if(msg!=null) {
+	if(&quot;${transacted}&quot;.equals(&quot;true&quot;)) session.commit()
+	
+	log.debug(&quot;########### Message Received&quot;+msg)
+
+	SampleResult.setResponseData(msg.toString())
+	SampleResult.setDataType(org.apache.jmeter.samplers.SampleResult.TEXT)
+} else {
+	log.info(&quot;############ consumer.receive timed out (timeout value: &quot; + &quot;${receive_timeout}&quot; + &quot;)&quot;)
+	//Mark timeout as &apos;error&apos; to enable filtering out in listeners (to just analyse successful receive rate etc)
+	SampleResult.setSuccessful(false)
+}
+</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Set Receive Rate" enabled="true">
+          <stringProp name="throughput">${__jexl2(${rate}*60)}</stringProp>
+          <intProp name="calcMode">2</intProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Receive Messages" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">def consumer=vars.getObject(&quot;Consumer&quot;);
+def session=vars.getObject(&quot;ReceiverSession&quot;)
+ 
+def msg = consumer.receive(&quot;${receive_timeout}&quot; as Integer) 
+
+if(msg!=null) {
+	if(&quot;${transacted}&quot;.equals(&quot;true&quot;)) session.commit()
+	
+	log.debug(&quot;########### Message Received&quot;+msg)
+
+	SampleResult.setResponseData(msg.toString())
+	SampleResult.setDataType(org.apache.jmeter.samplers.SampleResult.TEXT)
+} else {
+	log.info(&quot;############ consumer.receive timed out (timeout value: &quot; + &quot;${receive_timeout}&quot; + &quot;)&quot;)
+	//Mark timeout as &apos;error&apos; to enable filtering out in listeners (to just analyse successful receive rate etc)
+	SampleResult.setSuccessful(false)
+}
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group (Sender Connections)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${sender_connections}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </PostThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Close Sender Connections" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">System.getProperties().get(&quot;SenderConnection&quot;+ctx.getThreadNum()).close()
+
+log.info(&quot;###### Sender Connection closed&quot;)
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group (Receiver Connections)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${receiver_connections}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </PostThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Close Receiver Connections" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">System.getProperties().get(&quot;ReceiverConnection&quot;+ctx.getThreadNum()).close()
+
+log.info(&quot;###### Receiver Connection Closed&quot;)
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
