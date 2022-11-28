@@ -16,6 +16,8 @@ Containerized version of JMSTestHarness
 
 These repositories contain Dockerfiles and instructions to help you create the required Docker images, you need to provide MQ (the freely available Developer Edition is fine) and accept the license conditions. Its because of these restrictions that we cannot make the built images publicly available.
 
+### JMeter
+JMeter can also be used with MQ (though we recommend CPH or JMSTestHarness above). If you intend to use JMeter, it's important to configure it correctly as some existing guidance on use with MQ is not optimal. Each thread connecting to MQ should have it's own session, for instance. We have provided a sample JMeter script with instructions [here](./jmeter), to get you started developing your own. 
 
 ## IO Testing
 
