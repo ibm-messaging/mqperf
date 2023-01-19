@@ -4,6 +4,8 @@ The relevant yaml that was used in the configuration will be provided and any li
 the environment used for the openshift performance whitepapers.
 
 ### Rebuilding MQ CP4I Image
+These steps are no longer required, now that these configuration changes can be made using ConfigMaps in conjunction with QM yaml and the MQ Operator. At this moment its still not possible to alter the size of the MQ log extents (defaults to 16MB), so 64 Primary log files are used to produce a total of 1GB log files.
+
 The [repository](https://github.com/ibm-messaging/mq-container) that controls the creation of the MQ image has been rebuilt with the following changes:
 * qmgr.go edited to support fastpath bindings, unlimited channels and 4GB log fileset
 * disable.mqsc added to disable channelauth and create the required queues
@@ -12,7 +14,6 @@ The integration (CP4I) MQ image has then been rebuilt to use the rebuilt MQ imag
 
 The initial set of tests will be conducted with both the MQ client and MQ QM located in the same cluster and using a private network, and thus TLS communication is not required. Further tests will be completed with the MQ client outside of the cluster, with and without TLS enabled.
 
-These steps should not be required when the capability to configure these parameters is enabled in the MQ deployment mechanism.
 
 ### MQ client deployment
 Details of building and deploying the CPH client on OCP are provided in the cphtestp repository [instructions](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/openshift.md). The majority of our testing is performed with the CPH client, but we also have instructions on setting up a JMS client for use with OCP in the jmstestp repository [instructions](https://github.com/ibm-messaging/jmstestp/blob/master/openshift.md).
