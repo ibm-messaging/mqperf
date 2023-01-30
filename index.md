@@ -81,8 +81,8 @@ MQ is now available as part of the Cloud Pak for Integration (CP4I) available on
 
 Advice on setup and configuration of MQ (CP4I) and running workloads against the deployed QM can be found [here](./openshift/configuration.md)
 
-#### OpenShift 4.2 + CP4I 2019.4.1 (MQ 9.1.4)
-The first performance whitepaper on OpenShift looks at the performance of the QM when the client is co-located in the same OpenShift cluster: [MQ on OCP 4.2](./openshift/OCP4.2-InternalMessaging.pdf).
+#### OpenShift 4.10 + CP4I 2022.2.1 (MQ 9.3.0)
+The performance whitepaper on OpenShift looks at the performance of the QM when the client is co-located in the same OpenShift cluster and this is updated from the previous report at OCP 4.2: [MQ on OCP 4.10](./openshift/OCP4.10-InternalMessaging.pdf).
 
 
 ### MQ for z/OS
