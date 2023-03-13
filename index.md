@@ -72,6 +72,10 @@ A report illustrating the performance of the high availability (HA) function usi
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
 
+#### Improved Switch/Fail-over times in MQ V9.1.2
+PDF of blog article on MIQM & RDQM switch-over and fail-over performance improvements introduced in MQ 9.1.2.
+[MQ_9.1.2_switchover_failover_improvements.pdf](./MQ_9.1.2_switchover_failover_improvements.pdf)
+
 #### Streaming Queues Performance (Updated on 22nd December 2021 to include sections on using message expiry with streaming queues).
 Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. [MQ V9.2.3 Streaming Queues Performance Report V1.1.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report%20V1.1.pdf).
 
