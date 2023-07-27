@@ -19,7 +19,7 @@ The initial set of tests will be conducted with both the MQ client and MQ QM loc
 Details of building and deploying the CPH client on OCP are provided in the cphtestp repository [instructions](https://github.com/ibm-messaging/cphtestp/blob/master/openshift/openshift.md). The majority of our testing is performed with the CPH client, but we also have instructions on setting up a JMS client for use with OCP in the jmstestp repository [instructions](https://github.com/ibm-messaging/jmstestp/blob/master/openshift.md).
 
 ### Additional network configuration
-The default SDN (Software Defined Network) for our OCP 4.2 cluster uses 1Gb networking for all its communication between master->workers as well as workers->workers and external clients->workers. This obviously creates a network bottleneck when testing high throughput messaging. We have a 10GbE network  available across our cluster and clients, so we need to take advantage of this. This can be achieved using the Multus CNI plugin.
+The default SDN (Software Defined Network) for our OCP 4.2 cluster uses 1Gb networking for all its communication between master->workers as well as workers->workers and external clients->workers. This obviously creates a network bottleneck when testing high throughput messaging. We have a 10GbE and 100GbE network available across our cluster and clients, so we need to take advantage of this. This can be achieved using the Multus CNI plugin.
 
 At OCP 4.2.x, although the documentation suggests adding additional host networks is straightforward, it appears that further Multus interoperation will only be available in OCP 4.4.x, and that will only be at 'Tech Preview' level of support. There is some base functionality (even at 4.2), that is usable and is available by configuring the network.operator.openshift.io custom resource (CR) which stores the settings for the Cluster Network Operator (CNO). Occasionally it will serve up IP addresses that have already been allocated, and thus attempts to connect to the QM will fail.
 ```
@@ -65,6 +65,93 @@ tengig   49m
 ```
 
 If you define your additional network within a particular namespace, it can only be accessed from within that namespace. You can use the default namespace (or global namespaces config) if you wish to share it across multiple namespaces. Different configurations (in different namespaces) applied to network interfaces on the same switch/routing can communicate with each other, but for ease of management (of resources and IP addresses), its best to stick to a single namespace.
+
+#### 100GbE
+There is now a better CNI IPAM plugin called whereabouts that stores IP addresses in a cluster wide config to avoid reissuing the same IPs to Pod across the cluster, so Ive now updated the config to:
+```
+  additionalNetworks:
+  - name: tengig
+    namespace: default
+    rawCNIConfig: '{
+      "cniVersion": "0.3.1",
+      "name": "eth1",
+      "type": "host-device",
+      "pciBusID": "0000:06:00.0",
+      "ipam": {
+        "type": "whereabouts",
+        "range": "10.20.37.0/24", 
+        "exclude": [ 
+               "10.20.37.0/27"
+            ]
+      }
+    }'
+    type: Raw
+```
+As before, setting this in the cluster network configuration, automatically generates the NetworkAttachmentDefinition:
+```
+oc get net-attach-def -n default
+NAME            AGE
+tengig          6d
+```
+
+With this working well, and due to the use of host-device CNI type, those IP addresses are contactable from outside the cluster. You must ensure that the declared range includes the network gateway address (10.20.37.0 in this case); and I used exclude to force IP addresses to start from 10.20.37.32.
+
+Now wanting to run NativeHA (which replicates MQ log data from the Active to the two replica instances), I wanted to involve a second additional network. For this I declared a standalone NetworkAttachmentDefinition:
+```
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: hundredgig
+  namespace: default
+spec:
+  config: '{
+            "cniVersion": "0.3.1",
+            "name:": "eth2",
+            "type": "macvlan",
+            "master": "ens2f0",
+            "mode": "bridge",
+            "ipam": {
+                "type": "whereabouts",
+                "range":     "172.20.37.0/29"
+            }
+        }'
+```
+and Pods can now use annotations to request an IP address on this macvlan bridge network that uses the underlying 100Gb cards (ens2f0) to support a bridge network to connect it to any other Pods in the cluster. You can specify multiple additional networks by:
+```
+  annotations:
+    k8s.v1.cni.cncf.io/networks: default/tengig,default/hundredgig
+```
+and when Pods are deployed, the network configuration can be viewed by:
+```
+              k8s.v1.cni.cncf.io/networks: default/tengig,default/hundredgig
+              k8s.v1.cni.cncf.io/networks-status:
+                [{
+                    "name": "openshift-sdn",
+                    "interface": "eth0",
+                    "ips": [
+                        "10.130.5.21"
+                    ],
+                    "default": true,
+                    "dns": {}
+                },{
+                    "name": "default/tengig",
+                    "interface": "net1",
+                    "ips": [
+                        "10.20.37.35"
+                    ],
+                    "mac": "00:0a:f7:e9:c0:80",
+                    "dns": {}
+                },{
+                    "name": "default/hundredgig",
+                    "interface": "net2",
+                    "ips": [
+                        "172.20.37.5"
+                    ],
+                    "mac": "4e:0d:ce:54:2c:df",
+                    "dns": {}
+                }]
+```
+
 
 ### Increasing the pid limit
 
