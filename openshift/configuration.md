@@ -67,6 +67,12 @@ tengig   49m
 If you define your additional network within a particular namespace, it can only be accessed from within that namespace. You can use the default namespace (or global namespaces config) if you wish to share it across multiple namespaces. Different configurations (in different namespaces) applied to network interfaces on the same switch/routing can communicate with each other, but for ease of management (of resources and IP addresses), its best to stick to a single namespace.
 
 ### Increasing the pid limit
+
+4.10 UPDATE
+At OCP 4.10, the default has yet again changed and after realising their mistake in attempting to force people into restricted PID namespaces, the default PID limit is now back up to 4096.
+This (in my testing) should be adequate for 99% of peoples needs, though you can still modify this if required. They are now re-recommending the original workaround of using KubletConfig (and not ContainerRuntimeConfig below) if you want to proceed down this path.
+
+OLD (Left for context)
 The default value for pids_limit in the CRI-O environment which OpenShift 4 now supports is 1024 user processes. 
 This has been reduced from the default 4096 found in docker runtime environments. Whilst this is adequate for the vast majority of scenarios, there may be cases where this proves a limitation. 
 
