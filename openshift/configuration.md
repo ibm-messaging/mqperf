@@ -66,7 +66,7 @@ tengig   49m
 
 If you define your additional network within a particular namespace, it can only be accessed from within that namespace. You can use the default namespace (or global namespaces config) if you wish to share it across multiple namespaces. Different configurations (in different namespaces) applied to network interfaces on the same switch/routing can communicate with each other, but for ease of management (of resources and IP addresses), its best to stick to a single namespace.
 
-#### 100GbE
+#### Whereabouts
 There is now a better CNI IPAM plugin called whereabouts that stores IP addresses in a cluster wide config to avoid reissuing the same IPs to Pod across the cluster, so Ive now updated the config to:
 ```
   additionalNetworks:
@@ -96,6 +96,7 @@ tengig          6d
 
 With this working well, and due to the use of host-device CNI type, those IP addresses are contactable from outside the cluster. You must ensure that the declared range includes the network gateway address (10.20.37.0 in this case); and I used exclude to force IP addresses to start from 10.20.37.32.
 
+#### 100GbE
 Now wanting to run NativeHA (which replicates MQ log data from the Active to the two replica instances), I wanted to involve a second additional network. For this I declared a standalone NetworkAttachmentDefinition:
 ```
 apiVersion: "k8s.cni.cncf.io/v1"
