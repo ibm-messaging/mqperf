@@ -156,7 +156,7 @@ oc describe pod/perf0-ibm-mq-1
 ```
 
 #### Multus
-Once you have created the additional networks, and set the annotations to support IP addresses being assigned to the pods, there is one further problem to resolve. The active and replica QM pods all need to communicate with each other, and to do that without hardwiring addresses, kubernetes services are used. These by default will be on the OpenShift SDN which is our 1Gb network in our setup. We need to use [multus-service](https://cloud.redhat.com/blog/how-to-use-kubernetes-services-on-secondary-networks-with-multus-cni) to redirect the pods to use the service endpoints (endpointslices CRD) on the additional network.
+Once you have created the additional networks, and set the annotations to support IP addresses being assigned to the pods, there is one further problem to resolve. The active and replica QM pods all need to communicate with each other, and to do that without hardwiring addresses, kubernetes services are used. These by default will be on the OpenShift SDN which is our 1Gb network in our setup. We need to use [multus-service](https://cloud.redhat.com/blog/how-to-use-kubernetes-services-on-secondary-networks-with-multus-cni) to redirect the pods to use the service endpoints (endpointslices CRD) on the additional network. The git repo that stores the multus-service component is located at [https://github.com/k8snetworkplumbingwg/multus-service](https://github.com/k8snetworkplumbingwg/multus-service)
 
 You first need to install the multus-service component. As this is a technology preview, this isnt part of the base OCP project. You also need to be on OCP 4.10+.
 ```
