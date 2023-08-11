@@ -124,6 +124,8 @@ and Pods can now use annotations to request an IP address on this macvlan bridge
 ```
 and when Pods are deployed, the network configuration can be viewed by:
 ```
+oc describe pod/perf0-ibm-mq-1
+...
               k8s.v1.cni.cncf.io/networks: default/tengig,default/hundredgig
               k8s.v1.cni.cncf.io/networks-status:
                 [{
