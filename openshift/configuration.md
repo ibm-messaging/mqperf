@@ -117,7 +117,7 @@ spec:
             }
         }'
 ```
-and Pods can now use annotations to request an IP address on this macvlan bridge network that uses the underlying 100Gb cards (ens2f0) to support a bridge network to connect it to any other Pods in the cluster. You can specify multiple additional networks by:
+and Pods can now use annotations to request an IP address on this macvlan bridge network that uses the underlying 100Gb cards (ens2f0) to support a bridge network to connect it to any other Pods in the cluster. In this instance a block of 8 IP addresses has been reserved for use and whose allocation will be tracked by whereabouts. You can specify multiple additional networks by:
 ```
   annotations:
     k8s.v1.cni.cncf.io/networks: default/tengig,default/hundredgig
@@ -155,6 +155,40 @@ oc describe pod/perf0-ibm-mq-1
                 }]
 ```
 
+#### Multus
+Once you have created the additional networks, and set the annotations to support IP addresses being assigned to the pods, there is one further problem to resolve. The active and replica QM pods all need to communicate with each other, and to do that without hardwiring addresses, kubernetes services are used. These by default will be on the OpenShift SDN which is our 1Gb network in our setup. We need to use multus-service[https://cloud.redhat.com/blog/how-to-use-kubernetes-services-on-secondary-networks-with-multus-cni] to redirect the pods to use the service endpoints (endpointslices CRD) on the additional network.
+
+You first need to install the multus-service component. As this is a technology preview, this isnt part of the base OCP project. You also need to be on OCP 4.10+.
+```
+oc create -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-service/main/deploy-nft.yml
+```
+Weve already created our definition for the 100GbE in the previous section, so there are only two steps left to do. We need to define the service network as the new hundredgig network previously defined. This would usually be set directly on the service, but as the MQ operator creates the service definition for us, we need to alter metadata annotiations in the QueueManager CRD:
+```
+  annotations:
+    k8s.v1.cni.cncf.io/networks: default/tengig,default/hundredgig
+    k8s.v1.cni.cncf.io/service-network: default/hundredgig
+  labels:
+    service.kubernetes.io/service-proxy-name: multus-proxy 
+```
+We also need to identify that we wish an alternative service proxy implementation is used to provide the endpoints, and the 'multus-proxy' implementation is set in the last line above.
+
+When you now deploy your QM (or other pods), additional endpointslices are defined which are utilised in preference to the defaults (which are still defined):
+```
+oc get endpointslices | grep multus
+perf0-ibm-mq-multus-kbpk6             IPv4          1414    172.20.37.1,172.20.37.3,172.20.37.2     14d
+perf0-ibm-mq-replica-0-multus-wqvkn   IPv4          9414    172.20.37.2                             14d
+perf0-ibm-mq-replica-1-multus-vksfh   IPv4          9414    172.20.37.3                             14d
+perf0-ibm-mq-replica-2-multus-p9m9l   IPv4          9414    172.20.37.1                             14d
+```
+You can check you QM logs to ensure that connectivity exists between the active and replica instances and that they are using the IP addresses on the hundredgig additional network:
+```
+oc logs pod/perf0-ibm-mq-1 | more
+...
+2023-07-28T18:01:08.150Z AMQ3214I: Native HA inbound secure connection accepted from 'perf0-ibm-mq-0'. [CommentInsert1(perf0-ibm-mq-0), CommentInsert2(172.20.37.2), CommentInsert3(TLS_RSA_WITH_AES_256_GCM_SHA384
+)]
+2023-07-28T18:01:08.373Z AMQ3214I: Native HA inbound secure connection accepted from 'perf0-ibm-mq-2'. [CommentInsert1(perf0-ibm-mq-2), CommentInsert2(172.20.37.1), CommentInsert3(TLS_RSA_WITH_AES_256_GCM_SHA384
+)]
+```
 
 ### Increasing the pid limit
 
