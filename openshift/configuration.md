@@ -180,7 +180,7 @@ perf0-ibm-mq-replica-0-multus-wqvkn   IPv4          9414    172.20.37.2         
 perf0-ibm-mq-replica-1-multus-vksfh   IPv4          9414    172.20.37.3                             14d
 perf0-ibm-mq-replica-2-multus-p9m9l   IPv4          9414    172.20.37.1                             14d
 ```
-You can check you QM logs to ensure that connectivity exists between the active and replica instances and that they are using the IP addresses on the `hundredgig` additional network:
+You can check your QM logs to ensure that connectivity exists between the active and replica instances and that they are using the IP addresses on the `hundredgig` additional network:
 ```
 oc logs pod/perf0-ibm-mq-1 | more
 ...
