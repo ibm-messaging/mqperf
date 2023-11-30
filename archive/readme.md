@@ -13,3 +13,5 @@ List of archived Performance documents:
 [MQ 8.0 Windows Performance Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mp7m.pdf)
 
 [MQ 8.0 xLinux Performance Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mplb.pdf)
+
+[MQ 8.0 zLinux Performance Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mplc.pdf)
