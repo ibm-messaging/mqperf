@@ -32,8 +32,6 @@ The M2001 MQ Appliance was released in June 2016, and the accompanying MQ Applia
 The release of MQ 9.1 in July 2018, resulted in performance improvements in many HA and DR related scenarios on the M2001 appliance. The HA and DR Performance report has been updated again to Version 3:
 - M2001 HA and DR Performance Report [MPA2-3.0.pdf](./MPA2-3.0.pdf)
 
-
-
 #### M2000
 
 The M2000 MQ Appliance was the original version of the MQ Appliance and the performance reports that relate to this model are available here:
@@ -100,6 +98,8 @@ Advice on setup and configuration of MQ (CP4I) and running workloads against the
 #### OpenShift 4.10 + CP4I 2022.2.1 (MQ 9.3.0)
 The performance whitepaper on OpenShift looks at the performance of the QM when the client is co-located in the same OpenShift cluster and this is updated from the previous report at OCP 4.2: [MQ on OCP 4.10](./openshift/OCP4.10-InternalMessaging.pdf).
 
+#### OpenShift 4.12 + CP41 2023.2.1 (MQ 9.3.3)
+This performance whitepaper on OpenShift looks at the performance of Native HA QM and SIQM when the client is located outside the OpenShift cluster: [Native HA on OCP 4.12](./openshift/OCP4.12-NativeHA.pdf).
 
 ### MQ for z/OS
 
