@@ -114,6 +114,9 @@ The performance whitepaper on OpenShift looks at the performance of the QM when 
 #### OpenShift 4.12 + CP41 2023.2.1 (MQ 9.3.3)
 This performance whitepaper on OpenShift looks at the performance of Native HA QM and SIQM when the client is located outside the OpenShift cluster: [Native HA on OCP 4.12](./openshift/OCP4.12-NativeHA.pdf).
 
+#### NHA:CRR Performance overhead and monitoring
+This performance whitepaper looks at the impact of enabling the additional asynchronous replication to the recovery group. It also shows how your messaging systems can be monitored to determine how your NHA:CRR deployments are performing: [NHACRR performance overhead](./PerformanceTestOnNHACRR.pdf)
+
 ### MQ for z/OS
 
 Performance reports for the latest versions of IBM MQ for z/OS are available here. 
