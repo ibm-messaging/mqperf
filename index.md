@@ -52,13 +52,19 @@ This document contains general sections on best practises for performance, forme
 Performance reports for MQ on distributed platforms from V9.1 onwards are available below.
 For reports on versions of distributed MQ prior to V9.1 go to the archive list [here](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/readme.md). 
 
+##### Linux x64 Reports
 - IBM MQ V9.1 for Linux (x86-64 platform) Performance Report: [MQ_V9.1_Performance_Report_xLinux.pdf](./MQ_V9.1_Performance_Report_xLinux.pdf)
-- IBM MQ V9.1 for Windows Performance Report: [MQ_for_Windows_V910_Performance.pdf](./MQ_for_Windows_V910_Performance.pdf)
 - IBM MQ V9.2 for Linux (x86-64 platform) Performance Report: [MQ_V9.2_Performance_Report_xLinux.pdf](./MQ_V9.2_Performance_Report_xLinux.pdf)
 - IBM MQ V9.3 for Linux (x86-64 platform) Performance Report (version 2 -  Nov 2023): [MQ_V9.3_Performance_Report_xLinux_v2.pdf](./MQ_V9.3_Performance_Report_xLinux_v2.pdf)
 - IBM MQ V9.4 for Linux (x86-64 platform) Performance Report (version 1 -  Sep 2024): [MQ_V9.4_Performance_Report_xLinux_v1.0.pdf](./MQ_V9.4_Performance_Report_xLinux_v1.0.pdf)
+
+##### Windows Reports
+- IBM MQ V9.1 for Windows Performance Report: [MQ_for_Windows_V910_Performance.pdf](./MQ_for_Windows_V910_Performance.pdf)
 - IBM MQ V9.4 for Windows (Windows Server 2022 on x86-64) Performance Report (version 1 -  Dec 2024): [MQ_V9.4_Performance_Report_windows.pdf](./MQ_V9.4_Performance_Report_windows.pdf)
 
+##### Other Platforms
+- IBM MQ V9.4 (FP10) for AIX (version 1 -  July 2025): [MQ_V9.4_FP10_Performance_Report_aix.pdf](./MQ_V9.4_FP10_Performance_Report_aix.pdf)
+  
 #### AMS
 
 MQ V9 delivered a new AMS Quality of Protection called ‘Confidentiality’. A performance whitepaper has been produced that illustrates the performance profile this new mode brings by comparing it to existing AMS and non AMS scenarios. [AMS.pdf](./AMS.pdf)
