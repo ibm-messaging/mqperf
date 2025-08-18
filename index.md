@@ -124,7 +124,7 @@ This performance whitepaper on OpenShift looks at the performance of Native HA Q
 This performance whitepaper looks at the impact of enabling the additional asynchronous replication to the recovery group. It also shows how your messaging systems can be monitored to determine how your NHA:CRR deployments are performing: [NHACRR performance overhead](./PerformanceTestOnNHACRR.pdf)
 
 ##### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
-A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [PDF](./PerformanceImpactWithCOMPMSG.pdf)
+A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
 
 ### MQ for z/OS
 
@@ -173,5 +173,6 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
