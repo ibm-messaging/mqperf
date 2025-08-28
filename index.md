@@ -109,7 +109,7 @@ The following document describes the impact of the use of implicit syncpoints fo
 The following document describes logger enhancements made in MQ V9.0.2 and V9.1.
 [Logger Enhancements](./Logger-enhancements-for-MQ-v9.0.2-and-v9.1.pdf)
 
-##### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
+#### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
 A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
 
 
@@ -179,6 +179,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
