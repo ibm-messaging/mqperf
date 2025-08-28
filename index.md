@@ -109,6 +109,10 @@ The following document describes the impact of the use of implicit syncpoints fo
 The following document describes logger enhancements made in MQ V9.0.2 and V9.1.
 [Logger Enhancements](./Logger-enhancements-for-MQ-v9.0.2-and-v9.1.pdf)
 
+##### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
+A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
+
+
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
 
@@ -123,8 +127,6 @@ This performance whitepaper on OpenShift looks at the performance of Native HA Q
 #### NHA:CRR Performance overhead and monitoring
 This performance whitepaper looks at the impact of enabling the additional asynchronous replication to the recovery group. It also shows how your messaging systems can be monitored to determine how your NHA:CRR deployments are performing: [NHACRR performance overhead](./PerformanceTestOnNHACRR.pdf)
 
-##### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
-A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
 
 ### MQ for z/OS
 
@@ -133,7 +135,6 @@ Performance reports for the latest versions of IBM MQ for z/OS are available her
 - MQ for z/OS version 9.2 performance report [MQ for zOS V920 Performance.pdf](./MQ%20for%20zOS%20V920%20Performance.pdf). This report discusses the performance characteristics of the MQ for z/OS V9.2 release, as well as the performance of the new features including zHyperWrite for active logs, data set encryption support, TLS 1.3 cipher support for MQ channels, and for the Advanced VUE version the support of AMS Interception on server to server channels and the fasp.io gateway running on z/OS Container Extensions.
 - MQ for z/OS 9.3 performance report [MQ for zOS 9.3 Performance.pdf](./MQ%20for%20zOS%209.3%20Performance.pdf). This report discusses the performance characteristics of the MQ for z/OS 9.3 release including the performance of new features such as Streaming Queues, Statistics trace class(5) and allowing the data collection interval for accounting trace to be set independently of statistics trace, plus more granular control of the SMF data collection intervals. Updated on 16th December 2022 to include performance data for support of shared queue in Streaming queue feature with APAR PH49686.
 - MQ for z/OS 9.4 performance report [MQ for zOS 9.4 Performance.pdf](./MQ%20for%20zOS%209.4%20Performance.pdf). This report discusses the performance characteristics of the MQ for z/OS 9.4 release including the performance of zHyperLink support for MQ active log writes, 64-bit channel initiator for SVRCONN channels as well as enhancements to queue statistics trace, streaming queue performance and exactly-once support in MQ Kafka Connectors. Initial release in August 2024.
-
 
 Previous MQ for z/OS performance reports may now be found in the [archive](archive) directory.
 
@@ -149,6 +150,7 @@ Performance reports for MQ on z/OS documenting our experiences:
 - With the introduction of z/OS Container Extensions (zCX) which allow clients to deploy Linux on Z applications in Docker containers on z/OS, the [MQ with zCX](./MQ%20with%20zCX.pdf) report discusses the performance of the 3 use cases where zCX can add value to your MQ for z/OS configurations - acting as a client concentrator, a cluster full repository and as a host system for a fasp.io gateway.
 - When and why to use channel compression on MQ for z/OS is discussed in paper [MQ for z/OS Channel Compression](./MQforZOS_ChannelCompression_v1.1.pdf). The paper discusses what compression options are available on IBM z16, including using hardware, why compressing highly compressible messages may actually be more expensive than less compressible messages and when cost savings from compression might be achieved. 
 
+
 ### MFT
 
 IBM MQ Managed file transfer performance report contains the charts showing Performance measurements to present the performance characteristics of MQ V9.0.5 for Linux platform and to assist capacity planning. This report shows the messaging rate that can be achieved on Linux systems when transferring messages using different chunk sizes. Anyone designing, implementing or sizing Managed File Transfer solutions using WebSphere MQ for V9.0.5 and above and needs to understand the performance characteristics on Linux platform should review this report.
@@ -159,20 +161,25 @@ IBM MQ Managed file transfer performance report contains the charts showing Perf
 - MFT 9.0.5 Performance Report of Protocol bridge Agent and Standard Agent when files are transferred across 20+ miles locally and 5000+ miles globally [IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf](./IBM_MQMFT_9.0.5_Performance%20Report_Protocol_Bridge_Scenario_V3.pdf)
 - MFT for z/OS version 9.2.0 Performance report [MFT_for_zOS_v920.pdf](./MFT_for_zOS_v920.pdf)
 
+
 ### IBM MQ XMS .NET Client
 IBM XMS .NET Client performance report showing Performance measurements of MQ v9.1.x XMS .NET Client's connecting to MQ v9.1 Queue Manager.Performance reports contains .NET Core applications running on Windows and Linux.Where .NET Framework applications are running on Windows machine.
 - XMS .NET Core Performance Report [XMS .NET Core Performance Report.pdf](./XMS%20.NET%20Core%20Performance%20Report.pdf)
 - XMS .NET Framework Performance Report [XMS .NET Framework Performance Report](./XMS%20.NET%20Framework%20Performance%20Report.pdf)
 
+
 ### FASP
 The Fast, Adaptive and Secure Protocol (FASP®) is a high-speed transport that can achieve speeds much higher than TCP, especially across high latency and/or lossy networks. This capability is available through the fasp.io Gateway which MQ V9.1.4 advanced edition customers can download via Passport Advantage. Some initial results measured in the lab for servers channels connecting through a fasp.io Gateway can be seen in [this deck](./MQ914_fasp_gw.pdf). 
 **!!18th Feb 2020 - Updated with compression measurements.**
 
+
 ### Test Harnesses and tools
 For more information on the test harnesses and tools used to generate the data found in these reports, please take a look at the available [tools](./testharness.md).
 
+
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
