@@ -110,7 +110,17 @@ The following document describes logger enhancements made in MQ V9.0.2 and V9.1.
 [Logger Enhancements](./Logger-enhancements-for-MQ-v9.0.2-and-v9.1.pdf)
 
 #### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
-A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
+A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf
+
+### Performance Report(For Monitoring Queue and Channel , Activity trace, MQ Trace )
+The report has been prepared using IBM MQ V9.4.3. This report provides insights into
+the overhead on message throughput and CPU utilization when using the techniques
+mentioned below to analyse issues.
+Performance of MQ where  Queue and Channel Monitored
+Performance of MQ where Activity Trace enabled 
+Performance of MQ where MQ Trace enabled [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf
+
+
 
 
 ### MQ on OpenShift
@@ -179,6 +189,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
