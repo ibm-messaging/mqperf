@@ -119,6 +119,7 @@ mentioned below to analyse issues.
 1. Performance of MQ where  Queue and Channel Monitored
 2. Performance of MQ where Activity Trace enabled 
 3. Performance of MQ where MQ Trace enabled
+   
 [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
 
@@ -193,6 +194,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
