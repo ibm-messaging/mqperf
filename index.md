@@ -118,7 +118,7 @@ the overhead on message throughput and CPU utilization when using the techniques
 mentioned below to analyse issues.
 Performance of MQ where  Queue and Channel Monitored
 Performance of MQ where Activity Trace enabled 
-Performance of MQ where MQ Trace enabled [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf
+Performance of MQ where MQ Trace enabled [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
 
 
@@ -189,6 +189,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
