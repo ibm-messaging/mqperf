@@ -12,6 +12,9 @@ For new documents and performance articles, we intend to use this repository as 
 The M2003 MQ Appliance was released in August 2022, and the accompanying MQ Appliance Performance Report (MPA5) illustrates the increased performance of the new Hardware. Comparisons are made to the M2002 and M2001 models:
 - M2003 Performance Report [MPA5.pdf](./MPA5.pdf)
 
+A further report on the M2003 MQ Appliance is now available and illustrates the impact of filesystem encryption as well as presenting data on TLS and AMS scenarios.
+- M2003 TLS and Encryption Performance Report [MPA6.pdf](./MPA6.pdf)
+
 #### M2002
 
 The M2002 MQ Appliance was released in July 2018, and the accompanying MQ Appliance Performance Report (MPA3) illustrates the increased performance of the new Hardware:
@@ -194,6 +197,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 ### Get in touch
 You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+
 
 
 
