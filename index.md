@@ -125,6 +125,16 @@ mentioned below to analyse issues.
    
 [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
+#### Performance Assessment of Open Telemetry Tracing
+To assess the performance impact of enabling an MQ Tracing User Exit that exports telemetry data
+to a Jaeger Collector using OpenTelemetry. The assessment focuses on measuring changes in
+message throughput and CPU utilization on the IBM MQ queue manager while tracing is enabled.
+The goal is to determine the performance overhead introduced specifically by the IBM MQ
+OpenTelemetry tracing service—implemented as an IBM MQ API exit (Instana)— and to identify
+configurations that minimize performance degradation in production environments.
+   
+[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)
+
 
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
