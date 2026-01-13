@@ -133,7 +133,7 @@ The goal is to determine the performance overhead introduced specifically by the
 OpenTelemetry tracing service—implemented as an IBM MQ API exit (Instana)— and to identify
 configurations that minimize performance degradation in production environments.
    
-[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)
+
 
 [[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)](https://github.com/ibm-messaging/mqperf/blob/gh-pages/PerformanceImpactWithOtelJaegerV1%201.pdf)
 
