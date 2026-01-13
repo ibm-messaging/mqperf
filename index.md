@@ -135,6 +135,8 @@ configurations that minimize performance degradation in production environments.
    
 [Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)
 
+[[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)](https://github.com/ibm-messaging/mqperf/blob/gh-pages/PerformanceImpactWithOtelJaegerV1%201.pdf)
+
 
 ### MQ on OpenShift
 MQ is now available as part of the Cloud Pak for Integration (CP4I) available on the OpenShift platform. Whitepapers exploring the performance of MQ in that environment will be published shortly. These will be consumable reports that investigate a particular scenario; choose the most appropriate report to assist you in your sizing process.
