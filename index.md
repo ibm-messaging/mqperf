@@ -122,6 +122,10 @@ mentioned below to analyse issues.
 1. Performance of MQ where  Queue and Channel Monitored
 2. Performance of MQ where Activity Trace enabled 
 3. Performance of MQ where MQ Trace enabled
+
+#### Performance Impact Using Selectors in MQ
+A short paper analyzing the performance impact of using message selectors in IBM MQ. It evaluates how selector-based filtering affects message throughput and CPU utilization in single and Multi Queue environment. The study compares runs with and without selectors to highlight the overhead introduced by server-side message evaluation, identifying scenarios where selectors simplify application logic versus cases where they can become a performance bottleneck under high load. [./PerformanceImpactWithSelectors.pdf](https://github.com/ibm-messaging/mqperf/blob/gh-pages/Performance%20Impact%20of%20Using%20MQ%20Selectors%20in%20IBM%20MQ.pdf)
+
    
 [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
