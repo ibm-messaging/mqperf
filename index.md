@@ -84,10 +84,13 @@ MQ V9.2 introduced support for using the Apache Qpid JMS API (utilising the AMQP
 A paper describing the best practises for persistent messaging, and illustrating the performance of some different filesytems hosting the MQ transaction log of Linux on x86 has now been released:
 [mqio_v1.pdf](./mqio_v1.pdf).
 
-#### RDQM HA Performance
+#### HA Performance
 
 A report illustrating the performance of the high availability (HA) function using RDQM (delivered in the V9.0.4 CD & V9.1 LTs releases of MQ) has been released. The report is based on tests run on Linux for x86, and includes comparisons with the previous software HA offering (MIQM).
 [rdqm_performance_1.1.pdf](./rdqm_performance_1.1.pdf).
+
+A report illustrating the performcance of high availability (HA) options provided by Native High Availability (NHA) and RDQM in IBM MQ V9.4.5 on Linuc for x86.
+[MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf](./MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf).
 
 #### Queue Manager Re-start Times
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
