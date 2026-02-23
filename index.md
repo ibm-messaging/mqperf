@@ -89,7 +89,7 @@ A paper describing the best practises for persistent messaging, and illustrating
 A report illustrating the performance of the high availability (HA) function using RDQM (delivered in the V9.0.4 CD & V9.1 LTs releases of MQ) has been released. The report is based on tests run on Linux for x86, and includes comparisons with the previous software HA offering (MIQM).
 [rdqm_performance_1.1.pdf](./rdqm_performance_1.1.pdf).
 
-A report illustrating the performcance of high availability (HA) options provided by Native High Availability (NHA) and RDQM in IBM MQ V9.4.5 on Linuc for x86.
+A report illustrating the performance of high availability (HA) options provided by Native High Availability (NHA) and RDQM in IBM MQ V9.4.5 on Linux for x86 (Feb 2026).
 [MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf](./MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf).
 
 #### Queue Manager Re-start Times
