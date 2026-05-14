@@ -2,8 +2,6 @@
 
 [MQ 7.5 Pub Sub Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mp0c.pdf)
 
-[MQ 7.5 Telemetery](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mp0d.pdf)
-
 [MQ 8.0 Pub Sub Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mp0e.pdf)
 
 [MQ 8.0 IBMi Performance Report](https://github.com/ibm-messaging/mqperf/blob/gh-pages/archive/mp49.pdf)
