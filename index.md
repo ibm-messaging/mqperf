@@ -78,6 +78,8 @@ MQ V9.2 introduced support for using the Apache Qpid JMS API (utilising the AMQP
 
 - IBM MQ V9.3.3 for Linux (x86-64 platform) AMQP JMS Performance Report V1 : [MQ_V9.3_AMQP_Performance_Report_xLinux_v1.0.pdf](./MQ_V9.3_AMQP_Performance_Report_xLinux_v1.0.pdf)
 
+#### Telemetry (MQTT)
+- IBM MQ V9.4.5 Telemetry (MQTT V3) Performance Report : [MQ V9.4.5 Telemetry Report](./MQ_9.4.5_Telemetry_Report_v1.0.pdf)
 
 #### Persistent Messaging Performance
 
