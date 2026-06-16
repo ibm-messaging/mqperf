@@ -94,6 +94,9 @@ A report illustrating the performance of the high availability (HA) function usi
 A report illustrating the performance of high availability (HA) options provided by Native High Availability (NHA) and RDQM in IBM MQ V9.4.5 on Linux for x86 (Feb 2026).
 [MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf](./MQ_9.4.5.HA_Report_for_NHA_and_RDQM_v1.0.pdf).
 
+A report illustrating the performance of Native HA (NHA), Native HA Cross-Region Replication (NHA-CRR), Native HA In-Region Replication (NHA-IRR) and RDQM at MQ V10.
+[MQ_10.0_HA_Report_for_NHA_and_RDQM_V1.0](./MQ_10.0_HA_Report_for_NHA_and_RDQM_V1.0.pdf)
+
 #### Queue Manager Re-start Times
 A paper illustrating some of the important factors that can affect queue manager re-start times after a server failure (for instance). Includes optimisations made in V9.1.1 to improve queue manager recovery. 
 [Queue Manager Restart Times.pdf](./Queue%20Manager%20Restart%20Times.pdf).
