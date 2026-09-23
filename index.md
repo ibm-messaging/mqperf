@@ -87,7 +87,6 @@ A paper describing the best practises for persistent messaging, and illustrating
 [mqio_v1.pdf](./mqio_v1.pdf).
 
 #### HA Performance
-
 A report illustrating the performance of the high availability (HA) function using RDQM (delivered in the V9.0.4 CD & V9.1 LTs releases of MQ) has been released. The report is based on tests run on Linux for x86, and includes comparisons with the previous software HA offering (MIQM).
 [rdqm_performance_1.1.pdf](./rdqm_performance_1.1.pdf).
 
@@ -131,11 +130,10 @@ mentioned below to analyse issues.
 2. Performance of MQ where Activity Trace enabled 
 3. Performance of MQ where MQ Trace enabled
 
+[Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
+
 #### Performance Impact Using Selectors in MQ
 A short paper analyzing the performance impact of using message selectors in IBM MQ. It evaluates how selector-based filtering affects message throughput and CPU utilization in single and Multi Queue environment. The study compares runs with and without selectors to highlight the overhead introduced by server-side message evaluation, identifying scenarios where selectors simplify application logic versus cases where they can become a performance bottleneck under high load. [./PerformanceImpactWithSelectors.pdf](https://github.com/ibm-messaging/mqperf/blob/gh-pages/Performance%20Impact%20of%20Using%20MQ%20Selectors%20in%20IBM%20MQ.pdf)
-
-   
-[Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
 #### Performance Assessment of Open Telemetry Tracing
 To assess the performance impact of enabling an MQ Tracing User Exit that exports telemetry data
@@ -144,8 +142,6 @@ message throughput and CPU utilization on the IBM MQ queue manager while tracing
 The goal is to determine the performance overhead introduced specifically by the IBM MQ
 OpenTelemetry tracing service—implemented as an IBM MQ API exit (Instana)— and to identify
 configurations that minimize performance degradation in production environments.
-   
-
 
 [[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)](https://github.com/ibm-messaging/mqperf/blob/gh-pages/PerformanceImpactWithOtelJaegerV1%201.pdf)
 
@@ -169,6 +165,8 @@ This performance whitepaper looks at the impact of enabling the additional async
 Customers have been running MQ workloads in AWS for a long time, and more recently customers have been deploying MQ on OpenShift on AWS via a number of different deployment scenarios.
 The following whitepaper will assist in understanding the performance of SIQM, NHA and NHA:CRR scenarios in that environment: [MQ Performance on AWS](./NHACRRPerformanceTestAWS.pdf).
 
+### MQ SaaS Reserved Instance on AWS
+With the recent [announcement](https://www.ibm.com/new/announcements/ibm-mq-saas-on-aws-messaging-built-for-hybrid-and-multi-cloud-connectivity), customers are now able to quickly create fully managed IBM MQ Queue Managers on AWS. The following performance report will help guide users to selecting the correct tier of QM for their deployments: [MQ SaaS Performance on AWS](./MQSaaSPerformanceTestOnAWS.pdf)
 
 ### MQ for z/OS
 
