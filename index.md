@@ -105,7 +105,8 @@ PDF of blog article on MIQM & RDQM switch-over and fail-over performance improve
 [MQ_9.1.2_switchover_failover_improvements.pdf](./MQ_9.1.2_switchover_failover_improvements.pdf)
 
 #### Streaming Queues Performance (Updated on 22nd December 2021 to include sections on using message expiry with streaming queues).
-Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. [MQ V9.2.3 Streaming Queues Performance Report V1.1.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report%20V1.1.pdf).
+Performance report on streaming queues, introduced in MQ V9.2.3, including a comparison with a Pub/Sub approach to message duplication. 
+[MQ V9.2.3 Streaming Queues Performance Report V1.1.pdf](./MQ%20V9.2.3%20Streaming%20Queues%20Performance%20Report%20V1.1.pdf).
 
 #### Single Threaded Messaging Rate
 The following document describes the strategies and results from attempts to maximise messaging throughput rate in single/low threaded scenarios.
@@ -120,20 +121,21 @@ The following document describes logger enhancements made in MQ V9.0.2 and V9.1.
 [Logger Enhancements](./Logger-enhancements-for-MQ-v9.0.2-and-v9.1.pdf)
 
 #### Performance Impact of COMPMSG on MQ Sender/Receiver Channels
-A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. [COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
+A short paper evaluating IBM MQ channel compression (COMPMSG) on Sender/Receiver channels across multiple message sizes, assessing compression efficiency with network latency. It compares Baseline, LZ4FAST, and ZLIBFAST, measuring message rate and CPU usage to show when compression improves throughput and when the baseline remains comparable. 
+[COMPMSG.pdf](./PerformanceImpactWithCOMPMSG.pdf)
 
-#### Performance Report(For Monitoring Queue and Channel , Activity trace, MQ Trace )
+#### Performance Report when using Queue and Channel Monitoring, Activity trace and MQ Trace
 The report has been prepared using IBM MQ V9.4.3. This report provides insights into
 the overhead on message throughput and CPU utilization when using the techniques
 mentioned below to analyse issues.
 1. Performance of MQ where  Queue and Channel Monitored
 2. Performance of MQ where Activity Trace enabled 
 3. Performance of MQ where MQ Trace enabled
-
 [Performance Impact with Trace and Monitoring](./PerfornanceImpactWithActivtyTrace_MQTrace_MonintoringChannelQueue.pdf)
 
 #### Performance Impact Using Selectors in MQ
-A short paper analyzing the performance impact of using message selectors in IBM MQ. It evaluates how selector-based filtering affects message throughput and CPU utilization in single and Multi Queue environment. The study compares runs with and without selectors to highlight the overhead introduced by server-side message evaluation, identifying scenarios where selectors simplify application logic versus cases where they can become a performance bottleneck under high load. [./PerformanceImpactWithSelectors.pdf](https://github.com/ibm-messaging/mqperf/blob/gh-pages/Performance%20Impact%20of%20Using%20MQ%20Selectors%20in%20IBM%20MQ.pdf)
+A short paper analyzing the performance impact of using message selectors in IBM MQ. It evaluates how selector-based filtering affects message throughput and CPU utilization in single and Multi Queue environment. The study compares runs with and without selectors to highlight the overhead introduced by server-side message evaluation, identifying scenarios where selectors simplify application logic versus cases where they can become a performance bottleneck under high load. 
+[PerformanceImpactWithSelectors.pdf](https://github.com/ibm-messaging/mqperf/blob/gh-pages/Performance%20Impact%20of%20Using%20MQ%20Selectors%20in%20IBM%20MQ.pdf)
 
 #### Performance Assessment of Open Telemetry Tracing
 To assess the performance impact of enabling an MQ Tracing User Exit that exports telemetry data
@@ -142,8 +144,7 @@ message throughput and CPU utilization on the IBM MQ queue manager while tracing
 The goal is to determine the performance overhead introduced specifically by the IBM MQ
 OpenTelemetry tracing service—implemented as an IBM MQ API exit (Instana)— and to identify
 configurations that minimize performance degradation in production environments.
-
-[[Performance Assessment of Open Telemetry Tracing](./PerformanceImpactWithOtelJaegerV1 1.pdf)](https://github.com/ibm-messaging/mqperf/blob/gh-pages/PerformanceImpactWithOtelJaegerV1%201.pdf)
+[Performance Assessment of Open Telemetry Tracing](https://github.com/ibm-messaging/mqperf/blob/gh-pages/PerformanceImpactWithOtelJaegerV1%201.pdf)
 
 
 ### MQ on OpenShift
