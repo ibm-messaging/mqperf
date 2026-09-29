@@ -220,7 +220,7 @@ For more information on the test harnesses and tools used to generate the data f
 
 
 ### Get in touch
-You can contact @stmassey and @pharrishur with questions about the MQ Performance content.
+You can contact @stmassey with questions about the MQ Performance content.
 
 
 
