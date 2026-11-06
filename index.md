@@ -60,6 +60,7 @@ For reports on versions of distributed MQ prior to V9.1 go to the archive list [
 - IBM MQ V9.2 for Linux (x86-64 platform) Performance Report: [MQ_V9.2_Performance_Report_xLinux.pdf](./MQ_V9.2_Performance_Report_xLinux.pdf)
 - IBM MQ V9.3 for Linux (x86-64 platform) Performance Report (version 2 -  Nov 2023): [MQ_V9.3_Performance_Report_xLinux_v2.pdf](./MQ_V9.3_Performance_Report_xLinux_v2.pdf)
 - IBM MQ V9.4 for Linux (x86-64 platform) Performance Report (version 1 -  Sep 2024): [MQ_V9.4_Performance_Report_xLinux_v1.0.pdf](./MQ_V9.4_Performance_Report_xLinux_v1.0.pdf)
+- IBM MQ V10.0 for Linux (x86-64 platform) Performance Report (version 1 -  Sep 2024): [MQ_V10.0_Performance_Report_xLinux_v1.0.pdf](./MQ_V10.0_Performance_Report_xLinux_v1.0.pdf)
 
 ##### Windows Reports
 - IBM MQ V9.1 for Windows Performance Report: [MQ_for_Windows_V910_Performance.pdf](./MQ_for_Windows_V910_Performance.pdf)
