@@ -7,6 +7,11 @@ For many years the traditional place for Performance reports has been the [IBM S
 For new documents and performance articles, we intend to use this repository as the home for MQ Performance collateral.
 
 ### MQ Appliance
+#### M2004
+
+The M2004 MQ Appliance was released in July 2026, and the accompanyting MQ Appliance Performance Report (MPA7) illustrates the increased performance of the new Hardware. Comparisons are made to the M2003 and M2002 models:
+- M2004 Performance Report [MPA7.pdf](./MPA7.pdf)
+  
 #### M2003
 
 The M2003 MQ Appliance was released in August 2022, and the accompanying MQ Appliance Performance Report (MPA5) illustrates the increased performance of the new Hardware. Comparisons are made to the M2002 and M2001 models:
